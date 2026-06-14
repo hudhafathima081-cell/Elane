@@ -1,21 +1,59 @@
 export default function Navbar() {
   return (
 
-    <nav className="flex items-center justify-between px-16 py-8 border-b border-[#D8D1C7] bg-[#F3EEE7]">
+    <nav className="w-full bg-[#F8F4EE] border-b border-[#ece4d8]">
 
-      <h1 className="text-5xl font-serif tracking-wide text-black">
-        ÉLANE
-      </h1>
+      {/* TOP BAR */}
+      <div className="text-center py-3 text-[13px] tracking-[0.25em] uppercase text-black border-b border-[#ece4d8]">
 
-      <div className="flex gap-14 text-[18px] text-black">
+        Free Shipping Across India
 
-        <p>Watches</p>
+      </div>
 
-        <p>Accessories</p>
 
-        <p>About</p>
+      {/* MAIN NAVBAR */}
+      <div className="flex items-center justify-between px-8 py-6">
 
-        <p>Cart (0)</p>
+        {/* LEFT MENU */}
+        <button className="flex flex-col gap-[6px]">
+
+          <span className="w-7 h-[2px] bg-black"></span>
+          <span className="w-7 h-[2px] bg-black"></span>
+          <span className="w-7 h-[2px] bg-black"></span>
+
+        </button>
+
+
+        {/* CENTER LOGO */}
+        <div className="relative">
+
+          {/* RED ACCENT */}
+          <span className="absolute -top-2 left-1 text-[#9E2F2F] text-[24px] rotate-[-25deg] font-serif">
+            ´
+          </span>
+
+          {/* LOGO */}
+          <h1 className="text-[55px] leading-none tracking-[0.18em] font-serif text-black">
+
+            ELANE
+
+          </h1>
+
+        </div>
+
+
+        {/* RIGHT ICONS */}
+        <div className="flex items-center gap-8 text-[28px]">
+
+          <button>
+            ⌕
+          </button>
+
+          <button>
+            ◯
+          </button>
+
+        </div>
 
       </div>
 
