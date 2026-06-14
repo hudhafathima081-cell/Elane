@@ -39,10 +39,10 @@ export default function Hero() {
 
 
       {/* RIGHT SIDE IMAGE */}
-      <div className="relative h-[500px] md:h-screen overflow-hidden">
+      <div className="h-screen">
 
         <img
-          src="https://unsplash.com/photos/a-set-of-sunglasses-and-a-watch-rOo77LteZx0"
+          src="/model.jpg"
           alt="Luxury Watch"
           className="w-full h-full object-cover"
         />
