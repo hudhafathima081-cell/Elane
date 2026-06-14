@@ -86,11 +86,11 @@ export default function Footer() {
             </p>
 
             {/* EMAIL */}
-            <div className="flex border border-black rounded-full overflow-hidden">
+            <div className="flex border border-[#d8d1c7] rounded-full overflow-hidden bg-white">
 
               <input
                 type="email"
-                placeholder="Your email"
+                placeholder="Enter your email"
                 className="bg-transparent px-5 py-4 outline-none w-full text-sm"
               />
 
@@ -104,19 +104,52 @@ export default function Footer() {
 
         </div>
 
-        {/* BOTTOM */}
-        <div className="mt-20 pt-10 text-center">
+        {/* COUNTRY / REGION */}
+<div className="mt-24 border-t border-[#e5ddd2] pt-14">
 
-          <p className="text-[#8B2E2E] text-[22px] mb-3 font-light">
-            Built with ♡ by Huda
-          </p>
+  <p className="uppercase tracking-[0.2em] text-[12px] text-[#777] mb-5">
+    Country / Region
+  </p>
 
-          <p className="text-[#8B2E2E] text-[15px]">
-            © 2026 Hudha Fathima. All rights reserved.
-          </p>
+  <div className="w-[260px] border border-[#d8d1c7] rounded-full px-6 py-4 flex items-center justify-between text-[#444]">
 
-        </div>
+    <span>India | INR ₹</span>
 
+    <span>⌄</span>
+
+  </div>
+
+</div>
+
+
+{/* BOTTOM LEGAL */}
+<div className="border-t border-[#e5ddd2] mt-16 pt-10 pb-10 flex flex-col md:flex-row justify-between items-center gap-6">
+
+  <p className="text-[#9a9a9a] text-[14px]">
+    © 2026 ELANE. All rights reserved.
+  </p>
+
+  <div className="flex gap-8 text-[14px] text-[#9a9a9a]">
+
+    <p className="hover:text-black cursor-pointer transition">
+      Privacy Policy
+    </p>
+
+    <p className="hover:text-black cursor-pointer transition">
+      Refund Policy
+    </p>
+
+    <p className="hover:text-black cursor-pointer transition">
+      Terms of Service
+    </p>
+
+    <p className="hover:text-black cursor-pointer transition">
+      Shipping Policy
+    </p>
+
+  </div>
+
+</div>
       </div>
 
     </footer>
