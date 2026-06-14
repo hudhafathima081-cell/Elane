@@ -1,44 +1,73 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#F3EEE7] text-[#111111]">
+    <main className="bg-[#F3EEE7] min-h-screen">
 
-      {/* Navbar */}
-      <nav className="flex items-center justify-between px-8 py-6">
+      {/* NAVBAR */}
+      <nav className="flex items-center justify-between px-16 py-8 border-b border-[#D8D1C7]">
 
-        <h1 className="text-3xl font-serif tracking-wide">
-          <span className="text-[#B65A4A]">É</span>LANE
+        {/* LOGO */}
+        <h1 className="text-5xl font-serif tracking-wide text-black">
+          ÉLANE
         </h1>
 
-        <div className="flex gap-8 text-sm">
+        {/* MENU */}
+        <div className="flex gap-14 text-[18px] text-black">
           <p>Shop</p>
           <p>Collections</p>
           <p>About</p>
-          <p>Cart</p>
+          <p>Cart (0)</p>
         </div>
 
       </nav>
 
-      {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center mt-32 px-6">
 
-        <p className="text-sm tracking-[0.3em] mb-6">
-          NEW COLLECTION 2026
-        </p>
+      {/* HERO SECTION */}
+      <section className="grid grid-cols-2 min-h-screen">
 
-        <h2 className="text-6xl md:text-8xl font-serif leading-tight max-w-4xl">
-          Minimal fashion
-          <br />
-          deserves to be{" "}
-          <span className="text-[#B65A4A]">worn.</span>
-        </h2>
+        {/* LEFT SIDE */}
+        <div className="flex flex-col justify-center px-24">
 
-        <p className="mt-8 text-gray-600 max-w-xl text-lg">
-          Timeless fashion crafted for modern elegance.
-        </p>
+          <p className="tracking-[0.3em] text-[#A44A3F] text-sm mb-8">
+            NEW COLLECTION 2026
+          </p>
 
-        <button className="mt-10 border border-black rounded-full px-8 py-4 hover:bg-black hover:text-white transition duration-300">
-          Explore Collection →
-        </button>
+          <h2 className="text-[110px] leading-[1] font-serif text-black">
+
+            Minimal fashion
+
+            <br />
+
+            deserves to be{" "}
+
+            <span className="text-[#A44A3F]">
+              worn.
+            </span>
+
+          </h2>
+
+          <p className="mt-10 text-[32px] text-[#2E2E2E] font-serif">
+            Timeless fashion crafted for modern elegance.
+          </p>
+
+          <button className="mt-14 border border-black rounded-full px-10 py-5 w-fit tracking-[0.2em] uppercase text-sm hover:bg-black hover:text-white transition">
+
+            Explore Collection →
+
+          </button>
+
+        </div>
+
+
+        {/* RIGHT SIDE IMAGE */}
+        <div className="flex items-center justify-center">
+
+          <img
+            src="/model.jpg"
+            alt="Fashion Model"
+            className="w-full h-full object-cover"
+          />
+
+        </div>
 
       </section>
 
