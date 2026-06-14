@@ -125,9 +125,17 @@ export default function Footer() {
 {/* BOTTOM LEGAL */}
 <div className="border-t border-[#e5ddd2] mt-16 pt-10 pb-10 flex flex-col md:flex-row justify-between items-center gap-6">
 
-  <p className="text-[#9a9a9a] text-[14px]">
+  <div className="flex flex-col gap-2">
+
+  <p className="text-[#b0b0b0] text-[13px]">
+    Built with ♡ by Huda
+  </p>
+
+  <p className="text-[#b0b0b0] text-[13px]">
     © 2026 ELANE. All rights reserved.
   </p>
+
+</div>
 
   <div className="flex gap-8 text-[14px] text-[#9a9a9a]">
 
