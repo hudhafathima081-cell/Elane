@@ -13,7 +13,7 @@ export default function Home() {
         {/* MENU */}
         <div className="flex gap-14 text-[18px] text-black">
           <p>Shop</p>
-          <p>Collections</p>
+          <p>Accessories</p>
           <p>About</p>
           <p>Cart (0)</p>
         </div>
@@ -33,14 +33,16 @@ export default function Home() {
 
           <h2 className="text-[110px] leading-[1] font-serif text-black">
 
-            Minimal fashion
+           Luxury in
+
 
             <br />
 
-            deserves to be{" "}
+            
+every{" "}
 
             <span className="text-[#A44A3F]">
-              worn.
+            detail.
             </span>
 
           </h2>
