@@ -43,17 +43,24 @@ export default function Navbar() {
 
 
         {/* RIGHT ICONS */}
-        <div className="flex items-center gap-8 text-[28px]">
+       {/* RIGHT ICONS */}
+<div className="flex items-center gap-6">
 
-          <button>
-            ⌕
-          </button>
+  {/* SEARCH */}
+  <button className="text-black text-[26px] hover:opacity-70 transition">
 
-          <button>
-            ◯
-          </button>
+    🔍
 
-        </div>
+  </button>
+
+  {/* CART */}
+  <button className="text-black text-[24px] hover:opacity-70 transition">
+
+    🛍️
+
+  </button>
+
+</div>
 
       </div>
 
