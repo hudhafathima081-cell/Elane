@@ -29,15 +29,15 @@ export default function Navbar() {
 
           {/* RED ACCENT */}
           <span className="absolute -top-2 left-1 text-[#9E2F2F] text-[24px] rotate-[-25deg] font-serif">
-            ´
+            
           </span>
 
           {/* LOGO */}
-          <h1 className="text-[55px] leading-none tracking-[0.18em] font-serif text-black">
+          <h1 className="text-5xl font-serif tracking-wide text-black">
+        ÉLANE
+      </h1>
 
-            ELANE
-
-          </h1>
+      <div className="flex gap-14 text-[18px] text-black"></div>
 
         </div>
 
