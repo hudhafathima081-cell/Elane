@@ -11,24 +11,27 @@ export default function Footer() {
           <div className="max-w-sm">
 
             <h2 className="text-5xl font-serif tracking-[0.25em] text-black">
-              <span className="text-black">É</span>LANE
+              ÉLANE
             </h2>
 
-            <div className="w-6 h-[2px] bg-[#8B2E2E] mt-1 mb-6"></div>
+            {/* RED ACCENT */}
+            <div className="w-6 h-[2px] bg-[#8B2E2E] mt-2 mb-6"></div>
 
             <p className="text-[#5f5f5f] leading-8 text-[15px]">
-              Timeless accessories crafted for modern elegance.
-              Luxury rings, watches and bracelets designed with
-              minimal sophistication.
+              Timeless accessories crafted for
+              modern elegance. Luxury rings,
+              watches and bracelets designed
+              with minimal sophistication.
             </p>
 
           </div>
 
-          {/* RIGHT */}
-          <div className="grid grid-cols-3 gap-16">
+          {/* CENTER */}
+          <div className="grid grid-cols-3 gap-20">
 
+            {/* SHOP */}
             <div>
-              <h3 className="uppercase tracking-[0.3em] text-sm mb-6">
+              <h3 className="uppercase tracking-[0.3em] text-sm mb-6 text-black">
                 Shop
               </h3>
 
@@ -40,8 +43,9 @@ export default function Footer() {
               </div>
             </div>
 
+            {/* ABOUT */}
             <div>
-              <h3 className="uppercase tracking-[0.3em] text-sm mb-6">
+              <h3 className="uppercase tracking-[0.3em] text-sm mb-6 text-black">
                 About
               </h3>
 
@@ -53,8 +57,9 @@ export default function Footer() {
               </div>
             </div>
 
+            {/* FOLLOW */}
             <div>
-              <h3 className="uppercase tracking-[0.3em] text-sm mb-6">
+              <h3 className="uppercase tracking-[0.3em] text-sm mb-6 text-black">
                 Follow
               </h3>
 
@@ -68,20 +73,49 @@ export default function Footer() {
 
           </div>
 
+          {/* RIGHT */}
+          <div className="max-w-xs">
+
+            <h3 className="uppercase tracking-[0.3em] text-sm mb-6 text-black">
+              Join The Club
+            </h3>
+
+            <p className="text-[#5f5f5f] leading-8 text-[15px] mb-8">
+              Get updates on new luxury collections
+              and exclusive releases.
+            </p>
+
+            <div className="flex border border-black rounded-full overflow-hidden">
+
+              <input
+                type="email"
+                placeholder="Your email"
+                className="bg-transparent px-5 py-4 outline-none w-full text-sm"
+              />
+
+              <button className="bg-[#8B2E2E] text-white px-8 tracking-[0.2em] text-sm">
+                JOIN
+              </button>
+
+            </div>
+
+          </div>
+
         </div>
 
         {/* BOTTOM */}
-<div className="mt-20 border-t border-[#d8d1c7] pt-10 text-center">
+        <div className="border-t border-[#d8d1c7] mt-20 pt-10 text-center">
 
-  <h3 className="text-2xl font-semibold text-black">
-    Built with ♡ by Huda
-  </h3>
+          <p className="text-[#8B2E2E] text-[20px] mb-3">
+            Built with ♡ by Huda
+          </p>
 
-  <p className="mt-6 text-[#666] text-lg">
-    © 2026 Huda Fathima. All rights reserved.
-  </p>
+          <p className="text-[#8B2E2E] text-[15px]">
+            © 2026 Huda Fathima. All rights reserved.
+          </p>
 
-</div>
+        </div>
+
       </div>
 
     </footer>
