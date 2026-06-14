@@ -42,8 +42,8 @@ export default function Hero() {
       <div className="bg-[#F3EEE7] h-screen">
 
         <img
-  src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1200&auto=format&fit=crop"
-  alt="Luxury Watch"
+  src="https://unsplash.com/photos/a-set-of-sunglasses-and-a-watch-rOo77LteZx0"
+  alt="Luxury Accessories"
   className="w-full h-full object-cover"
 />
 
