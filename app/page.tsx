@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#F5F1E8] text-[#111111]">
+    <main className="min-h-screen bg-[#F3EEE7] text-[#111111]">
 
       {/* Navbar */}
       <nav className="flex items-center justify-between px-8 py-6">
