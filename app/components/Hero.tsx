@@ -42,10 +42,10 @@ export default function Hero() {
       <div className="bg-[#F3EEE7] h-screen">
 
         <img
-          src="/model.jpg"
-          alt="Luxury Watch"
-          className="w-full h-screen object-cover"
-        />
+  src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1200&auto=format&fit=crop"
+  alt="Luxury Watch"
+  className="w-full h-full object-cover"
+/>
 
       </div>
 
