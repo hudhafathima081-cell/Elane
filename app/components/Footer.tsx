@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#F5F1EA] px-8 md:px-16 py-20 mt-24">
+    <footer className="bg-[#F5F1EA] px-10 py-20 ">
 
       <div className="max-w-7xl mx-auto">
 
@@ -105,7 +105,7 @@ export default function Footer() {
         </div>
 
         {/* BOTTOM */}
-        <div className="border-t border-[#ddd6cc] mt-20 pt-10 text-center">
+        <div className="mt-20 pt-10 text-center">
 
           <p className="text-[#8B2E2E] text-[22px] mb-3 font-light">
             Built with ♡ by Huda

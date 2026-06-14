@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
 
-    <section className="grid md:grid-cols-2 min-h-screen bg-[#F5F1EA]">
+    <section className="grid md:grid-cols-2 bg-[#F5F1EA]">
 
       {/* LEFT SIDE */}
       <div className="flex flex-col justify-center px-10 md:px-24 py-20">
@@ -29,25 +29,26 @@ export default function Hero() {
 
         </p>
 
-        <button className="mt-14 border border-black rounded-full px-10 py-5 w-fit tracking-[0.25em] uppercase text-sm hover:bg-black hover:text-white transition duration-300">
+        <button className="mt-14 bg-black text-white rounded-full px-10 py-5 w-fit tracking-[0.25em] uppercase text-sm hover:bg-[#2a2a2a] transition duration-300">
 
-          Explore Collection →
+  Explore Collection →
 
-        </button>
+</button>
 
       </div>
 
 
       {/* RIGHT SIDE IMAGE */}
-      <div className="h-screen">
+      {/* RIGHT SIDE IMAGE */}
+<div className="bg-[#F5F1EA] flex items-center justify-center px-10 pb-10">
 
-        <img
-          src="/model.jpg"
-          alt="Luxury Watch"
-          className="w-full h-full object-cover"
-        />
+  <img
+    src="/model.jpg"
+    alt="Luxury Model"
+    className="w-full max-w-[520px] h-[700px] object-cover rounded-[20px]"
+  />
 
-      </div>
+</div>
 
     </section>
 
