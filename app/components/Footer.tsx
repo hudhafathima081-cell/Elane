@@ -15,28 +15,31 @@ export default function Footer() {
 
               <div className="relative inline-block">
 
-                {/* SMALL RED ACCENT */}
-                <div
-                  className="
-                    absolute
-                    top-[2px]
-                    left-5
-                    w-4
-                    h-[2px]
-                    bg-[#9E2F2F]
-                    rotate-[-45deg]
-                  "
-                ></div>
+                
 
                 {/* LOGO TEXT */}
-                <h2 className="text-[56px] leading-none tracking-[0.22em] text-black font-serif">
-                  ÉLANE
-                </h2>
+                <div className="flex items-start">
+
+  {/* BLACK E */}
+  <span className="text-[56px] leading-none font-serif text-black relative">
+    E
+
+    {/* RED ACCENT */}
+    <span className="absolute -top-3 left-4 text-[#9E2F2F] text-[26px] rotate-[-20deg]">
+      ´
+    </span>
+  </span>
+
+  {/* REST OF LOGO */}
+  <span className="text-[56px] leading-none tracking-[0.22em] font-serif text-black ml-1">
+    LANE
+  </span>
+
+</div>
 
               </div>
 
-              {/* RED LINE */}
-              <div className="w-14 h-[2px] bg-[#9E2F2F] mt-5"></div>
+              
 
             </div>
 
