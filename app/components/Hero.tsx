@@ -1,35 +1,35 @@
 export default function Hero() {
   return (
 
-    <section className="grid grid-cols-2 bg-[#F3EEE7] overflow-hidden">
+    <section className="grid md:grid-cols-2 min-h-screen bg-[#F5F1EA]">
 
       {/* LEFT SIDE */}
-      <div className="flex flex-col justify-center px-24 h-screen">
+      <div className="flex flex-col justify-center px-10 md:px-24 py-20">
 
-        <p className="tracking-[0.3em] text-[#A44A3F] text-sm mb-8">
+        <p className="tracking-[0.35em] text-[#A44A3F] text-sm mb-8">
           NEW COLLECTION 2026
         </p>
 
-        <h2 className="text-[110px] leading-[1] font-serif text-black">
+        <h1 className="text-[70px] md:text-[110px] leading-[0.95] font-serif text-black">
 
           Luxury in
           <br />
 
           every{" "}
 
-          <span className="text-[#A44A3F]">
+          <span className="text-[#8B2E2E]">
             detail.
           </span>
 
-        </h2>
+        </h1>
 
-        <p className="mt-10 text-[32px] text-[#2E2E2E] font-serif leading-[1.4] max-w-xl">
+        <p className="mt-10 text-[24px] md:text-[32px] leading-relaxed text-[#2E2E2E] font-serif max-w-xl">
 
           Minimal accessories designed for timeless elegance.
 
         </p>
 
-        <button className="mt-14 border border-black rounded-full px-10 py-5 w-fit tracking-[0.2em] uppercase text-sm hover:bg-black hover:text-white transition duration-300">
+        <button className="mt-14 border border-black rounded-full px-10 py-5 w-fit tracking-[0.25em] uppercase text-sm hover:bg-black hover:text-white transition duration-300">
 
           Explore Collection →
 
@@ -39,13 +39,13 @@ export default function Hero() {
 
 
       {/* RIGHT SIDE IMAGE */}
-      <div className="bg-[#F3EEE7] h-screen">
+      <div className="relative h-[500px] md:h-screen overflow-hidden">
 
         <img
-  src="https://unsplash.com/photos/a-set-of-sunglasses-and-a-watch-rOo77LteZx0"
-  alt="Luxury Accessories"
-  className="w-full h-full object-cover"
-/>
+          src="https://unsplash.com/photos/a-set-of-sunglasses-and-a-watch-rOo77LteZx0"
+          alt="Luxury Watch"
+          className="w-full h-full object-cover"
+        />
 
       </div>
 
