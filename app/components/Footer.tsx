@@ -18,22 +18,11 @@ export default function Footer() {
                 
 
                 {/* LOGO TEXT */}
-                <div className="flex items-start">
+               <h1 className="text-5xl font-serif tracking-wide text-black">
+        ÉLANE
+      </h1>
 
-  {/* BLACK E */}
-  <span className="text-[56px] leading-none font-serif text-black relative">
-    E
-
-    {/* RED ACCENT */}
-    <span className="absolute -top-3 left-4 text-[#9E2F2F] text-[26px] rotate-[-20deg]">
-      ´
-    </span>
-  </span>
-
-  {/* REST OF LOGO */}
-  <span className="text-[56px] leading-none tracking-[0.22em] font-serif text-black ml-1">
-    LANE
-  </span>
+      <div className="flex gap-14 text-[18px] text-black">
 
 </div>
 
