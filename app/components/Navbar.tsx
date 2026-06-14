@@ -44,19 +44,47 @@ export default function Navbar() {
 
         {/* RIGHT ICONS */}
        {/* RIGHT ICONS */}
-<div className="flex items-center gap-6">
+{/* RIGHT ICONS */}
+<div className="flex items-center gap-7">
 
-  {/* SEARCH */}
-  <button className="text-black text-[26px] hover:opacity-70 transition">
+  {/* SEARCH ICON */}
+  <button className="text-black hover:opacity-70 transition">
 
-    🔍
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.7}
+      stroke="currentColor"
+      className="w-7 h-7"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="m21 21-4.35-4.35m1.85-5.15a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+      />
+    </svg>
 
   </button>
 
-  {/* CART */}
-  <button className="text-black text-[24px] hover:opacity-70 transition">
 
-    🛍️
+  {/* CART ICON */}
+  <button className="text-black hover:opacity-70 transition">
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.7}
+      stroke="currentColor"
+      className="w-7 h-7"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M16.5 6V5a4.5 4.5 0 0 0-9 0v1M3.75 8.25h16.5l-1.2 10.2a2.25 2.25 0 0 1-2.23 1.95H7.18a2.25 2.25 0 0 1-2.23-1.95L3.75 8.25Z"
+      />
+    </svg>
 
   </button>
 
