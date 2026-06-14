@@ -29,7 +29,7 @@ export default function Hero() {
 
         </p>
 
-        <button className="mt-14 border border-black rounded-full px-10 py-5 w-fit tracking-[0.2em] uppercase text-sm hover:bg-black hover:text-white transition">
+        <button className="mt-14 border rounded-full px-10 py-5 w-fit tracking-[0.2em] uppercase text-sm hover:text-white transition">
 
           Explore Collection →
 
