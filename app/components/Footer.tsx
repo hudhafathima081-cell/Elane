@@ -10,12 +10,23 @@ export default function Footer() {
           {/* LEFT */}
           <div className="max-w-sm">
 
-            <h2 className="text-5xl font-serif tracking-[0.25em] text-black">
-              ÉLANE
-            </h2>
+            <div className="mb-8">
 
-            {/* RED ACCENT */}
-            <div className="w-6 h-[2px] bg-[#8B2E2E] mt-2 mb-6"></div>
+  <div className="relative inline-block">
+    
+    <h2 className="text-5xl font-serif tracking-[0.25em] text-black">
+      ÉLANE
+    </h2>
+
+    <span className="absolute -top-1 left-3 text-[#9E2F2F] text-sm">
+      /
+    </span>
+
+  </div>
+
+  <div className="w-10 h-[2px] bg-[#9E2F2F] mt-3 mb-6"></div>
+
+</div>
 
             <p className="text-[#5f5f5f] leading-8 text-[15px]">
               Timeless accessories crafted for
@@ -111,7 +122,7 @@ export default function Footer() {
           </p>
 
           <p className="text-[#8B2E2E] text-[15px]">
-            © 2026 Huda Fathima. All rights reserved.
+            © 2026 Hudha Fathima. All rights reserved.
           </p>
 
         </div>
