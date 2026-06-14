@@ -71,14 +71,17 @@ export default function Footer() {
         </div>
 
         {/* BOTTOM */}
-        <div className="mt-20 text-center border-t border-[#d8d1c7] pt-8">
+<div className="mt-20 border-t border-[#d8d1c7] pt-10 text-center">
 
-          <p className="text-[#777] tracking-wide">
-            Built with love, Huda ♡
-          </p>
+  <h3 className="text-2xl font-semibold text-black">
+    Built with ♡ by Huda
+  </h3>
 
-        </div>
+  <p className="mt-6 text-[#666] text-lg">
+    © 2026 Huda Fathima. All rights reserved.
+  </p>
 
+</div>
       </div>
 
     </footer>
