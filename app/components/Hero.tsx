@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Hero() {
   return (
 
@@ -28,12 +29,13 @@ export default function Hero() {
           Minimal accessories designed for timeless elegance.
 
         </p>
-
+<Link href="/collections">
         <button className="mt-14 bg-black text-white rounded-full px-10 py-5 w-fit tracking-[0.25em] uppercase text-sm hover:bg-[#2a2a2a] transition duration-300">
 
   Explore Collection →
 
 </button>
+</Link>
 
       </div>
 
