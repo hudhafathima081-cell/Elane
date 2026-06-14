@@ -1,101 +1,99 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#F5F1EA] px-10 py-20 mt-24">
+    <footer className="bg-[#F5F1EA] px-8 md:px-16 py-20 mt-24">
 
       <div className="max-w-7xl mx-auto">
 
-        {/* TOP */}
-        <div className="flex flex-col md:flex-row justify-between gap-16">
+        {/* TOP SECTION */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
 
           {/* LEFT */}
-          <div className="max-w-sm">
+          <div>
 
+            {/* LOGO */}
             <div className="mb-8">
 
-  <div className="relative inline-block">
-    
-    <h2 className="text-5xl font-serif tracking-[0.25em] text-black">
-      ÉLANE
-    </h2>
+              <div className="relative inline-block">
 
-    <span className="absolute -top-1 left-3 text-[#9E2F2F] text-sm">
-      /
-    </span>
+                {/* SMALL RED ACCENT */}
+                <div
+                  className="
+                    absolute
+                    top-[2px]
+                    left-5
+                    w-4
+                    h-[2px]
+                    bg-[#9E2F2F]
+                    rotate-[-45deg]
+                  "
+                ></div>
 
-  </div>
+                {/* LOGO TEXT */}
+                <h2 className="text-[56px] leading-none tracking-[0.22em] text-black font-serif">
+                  ÉLANE
+                </h2>
 
-  <div className="w-10 h-[2px] bg-[#9E2F2F] mt-3 mb-6"></div>
+              </div>
 
-</div>
+              {/* RED LINE */}
+              <div className="w-14 h-[2px] bg-[#9E2F2F] mt-5"></div>
 
-            <p className="text-[#5f5f5f] leading-8 text-[15px]">
-              Timeless accessories crafted for
-              modern elegance. Luxury rings,
-              watches and bracelets designed
+            </div>
+
+            {/* DESCRIPTION */}
+            <p className="text-[#5f5f5f] text-[15px] leading-8 max-w-xs">
+              Timeless accessories crafted for modern elegance.
+              Luxury rings, watches and bracelets designed
               with minimal sophistication.
             </p>
 
           </div>
 
-          {/* CENTER */}
-          <div className="grid grid-cols-3 gap-20">
+          {/* SHOP */}
+          <div>
 
-            {/* SHOP */}
-            <div>
-              <h3 className="uppercase tracking-[0.3em] text-sm mb-6 text-black">
-                Shop
-              </h3>
+            <h3 className="uppercase tracking-[0.35em] text-[13px] mb-8 text-black">
+              Shop
+            </h3>
 
-              <div className="space-y-4 text-[#5f5f5f]">
-                <p>Rings</p>
-                <p>Watches</p>
-                <p>Bracelets</p>
-                <p>Luxury Gifts</p>
-              </div>
+            <div className="space-y-5 text-[#5f5f5f] text-[15px]">
+              <p>Rings</p>
+              <p>Watches</p>
+              <p>Bracelets</p>
+              <p>Luxury Gifts</p>
             </div>
 
-            {/* ABOUT */}
-            <div>
-              <h3 className="uppercase tracking-[0.3em] text-sm mb-6 text-black">
-                About
-              </h3>
+          </div>
 
-              <div className="space-y-4 text-[#5f5f5f]">
-                <p>Our Story</p>
-                <p>Contact</p>
-                <p>Shipping</p>
-                <p>Returns</p>
-              </div>
-            </div>
+          {/* ABOUT */}
+          <div>
 
-            {/* FOLLOW */}
-            <div>
-              <h3 className="uppercase tracking-[0.3em] text-sm mb-6 text-black">
-                Follow
-              </h3>
+            <h3 className="uppercase tracking-[0.35em] text-[13px] mb-8 text-black">
+              About
+            </h3>
 
-              <div className="space-y-4 text-[#5f5f5f]">
-                <p>Instagram</p>
-                <p>Pinterest</p>
-                <p>TikTok</p>
-                <p>Facebook</p>
-              </div>
+            <div className="space-y-5 text-[#5f5f5f] text-[15px]">
+              <p>Our Story</p>
+              <p>Contact</p>
+              <p>Shipping</p>
+              <p>Returns</p>
             </div>
 
           </div>
 
           {/* RIGHT */}
-          <div className="max-w-xs">
+          <div>
 
-            <h3 className="uppercase tracking-[0.3em] text-sm mb-6 text-black">
+            <h3 className="uppercase tracking-[0.35em] text-[13px] mb-8 text-black">
               Join The Club
             </h3>
 
-            <p className="text-[#5f5f5f] leading-8 text-[15px] mb-8">
+            <p className="text-[#5f5f5f] text-[15px] leading-8 mb-8">
               Get updates on new luxury collections
               and exclusive releases.
             </p>
 
+            {/* EMAIL */}
             <div className="flex border border-black rounded-full overflow-hidden">
 
               <input
@@ -104,7 +102,7 @@ export default function Footer() {
                 className="bg-transparent px-5 py-4 outline-none w-full text-sm"
               />
 
-              <button className="bg-[#8B2E2E] text-white px-8 tracking-[0.2em] text-sm">
+              <button className="bg-[#8B2E2E] text-white px-8 text-sm tracking-[0.25em]">
                 JOIN
               </button>
 
@@ -115,9 +113,9 @@ export default function Footer() {
         </div>
 
         {/* BOTTOM */}
-        <div className="border-t border-[#d8d1c7] mt-20 pt-10 text-center">
+        <div className="border-t border-[#ddd6cc] mt-20 pt-10 text-center">
 
-          <p className="text-[#8B2E2E] text-[20px] mb-3">
+          <p className="text-[#8B2E2E] text-[22px] mb-3 font-light">
             Built with ♡ by Huda
           </p>
 
