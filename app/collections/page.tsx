@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function CollectionsPage() {
 
   const collections = [
@@ -5,6 +6,7 @@ export default function CollectionsPage() {
     {
       name: "Watches",
       image: "/watch.jpg",
+      slug: "watches",
     },
 
     {
