@@ -40,7 +40,7 @@ export default function WatchesPage() {
     },
 
     {
-      name: "Boss",
+      name: "Hugo Boss Praise",
       image: "/watch6.jpg",
       price: "₹29,999",
       slug: "royal-titanium",
@@ -91,7 +91,7 @@ export default function WatchesPage() {
 
                 <button className="w-full bg-black text-white py-4 rounded-full tracking-[0.2em] uppercase text-sm">
 
-                  View Product
+                  Purchase
 
                 </button>
 
