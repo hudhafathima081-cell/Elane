@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 export default function CollectionsPage() {
 
   const collections = [
@@ -12,36 +13,43 @@ export default function CollectionsPage() {
     {
       name: "Rings",
       image: "/ring.jpg",
+      slug: "rings",
     },
 
     {
       name: "Bracelets",
       image: "/bracelet.jpg",
+      slug: "bracelets",
     },
 
     {
       name: "Bangles",
       image: "/bangle.jpg",
+      slug: "bangles",
     },
 
     {
       name: "Sunglasses",
       image: "/sunglasses.jpg",
+      slug: "sunglasses",
     },
 
     {
       name: "Chains",
       image: "/chain.jpg",
+      slug: "chains",
     },
 
     {
       name: "Earrings",
       image: "/earring.jpg",
+      slug: "earrings",
     },
 
     {
       name: "Luxury Gifts",
       image: "/gift.jpg",
+      slug: "gifts",
     },
 
   ];
@@ -50,7 +58,6 @@ export default function CollectionsPage() {
 
     <section className="min-h-screen bg-[#F8F4EE] px-10 py-20">
 
-      {/* HEADING */}
       <div className="text-center mb-20">
 
         <p className="tracking-[0.3em] uppercase text-[#9E2F2F] text-sm mb-6">
@@ -64,35 +71,36 @@ export default function CollectionsPage() {
       </div>
 
 
-      {/* COLLECTION GRID */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
         {collections.map((item, index) => (
 
-          <div
+          <Link
+            href={`/collections/${item.slug}`}
             key={index}
-            className="group cursor-pointer"
           >
 
-            {/* IMAGE */}
-            <div className="overflow-hidden rounded-[30px] bg-white">
+            <div className="group cursor-pointer">
 
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500"
-              />
+              <div className="overflow-hidden rounded-[30px] bg-white">
+
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500"
+                />
+
+              </div>
+
+              <h2 className="mt-6 text-[28px] font-serif text-center text-black">
+
+                {item.name}
+
+              </h2>
 
             </div>
 
-            {/* TITLE */}
-            <h2 className="mt-6 text-[28px] font-serif text-center text-black">
-
-              {item.name}
-
-            </h2>
-
-          </div>
+          </Link>
 
         ))}
 
