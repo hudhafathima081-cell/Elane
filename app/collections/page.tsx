@@ -6,7 +6,7 @@ export default function CollectionsPage() {
 
     {
       name: "Watches",
-      image: "watch1.jpg",
+      image: "/watch.jpg",
       slug: "watches",
     },
 

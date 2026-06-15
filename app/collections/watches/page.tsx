@@ -5,10 +5,10 @@ export default function WatchesPage() {
   const watches = [
 
     {
-      name: "Rolex Black Edition",
-      image: "/watch.jpg",
+      name: "Nordgreen Unika",
+      image: "/watch1.jpg",
       price: "₹24,999",
-      slug: "rolex-black",
+      slug: "watches",
     },
 
     {
