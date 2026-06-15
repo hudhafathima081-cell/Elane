@@ -33,7 +33,7 @@ export default function WatchesPage() {
     },
 
     {
-      name: "Midnight Elite",
+      name: "Anne Klein",
       image: "/watch5.jpg",
       price: "₹21,999",
       slug: "midnight-elite",
