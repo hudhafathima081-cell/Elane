@@ -1,4 +1,9 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
 
     <nav className="w-full bg-[#F8F4EE] border-b border-[#ece4d8]">
@@ -15,7 +20,10 @@ export default function Navbar() {
       <div className="flex items-center justify-between px-8 py-6">
 
         {/* LEFT MENU */}
-        <button className="flex flex-col gap-[6px]">
+        <button
+  onClick={() => setMenuOpen(true)}
+  className="flex flex-col gap-[6px]"
+>
 
           <span className="w-7 h-[2px] bg-black"></span>
           <span className="w-7 h-[2px] bg-black"></span>
@@ -91,7 +99,95 @@ export default function Navbar() {
 </div>
 
       </div>
+{/* SIDEBAR MENU */}
 
+{menuOpen && (
+
+  <div className="fixed inset-0 z-50 flex">
+
+    {/* DARK BACKGROUND */}
+    <div
+      className="w-full bg-black/40"
+      onClick={() => setMenuOpen(false)}
+    />
+
+    {/* MENU BOX */}
+    <div className="absolute left-0 top-0 w-[320px] h-screen bg-white p-10 shadow-2xl">
+
+      {/* CLOSE BUTTON */}
+      <button
+        onClick={() => setMenuOpen(false)}
+        className="text-4xl mb-10"
+      >
+        ×
+      </button>
+
+      {/* MENU LINKS */}
+      <div className="flex flex-col gap-6 text-[18px] font-light">
+
+        <Link
+          href="/"
+          className="hover:translate-x-2 transition duration-300"
+        >
+          Home
+        </Link>
+
+        <Link
+          href="#"
+          className="hover:translate-x-2 transition duration-300"
+        >
+          About Us
+        </Link>
+
+        <Link
+          href="#"
+          className="hover:translate-x-2 transition duration-300"
+        >
+          Contact
+        </Link>
+
+        <Link
+          href="#"
+          className="hover:translate-x-2 transition duration-300"
+        >
+          Shipping Policy
+        </Link>
+
+        <Link
+          href="#"
+          className="hover:translate-x-2 transition duration-300"
+        >
+          Return Policy
+        </Link>
+
+        <Link
+          href="#"
+          className="hover:translate-x-2 transition duration-300"
+        >
+          Track Order
+        </Link>
+
+        <Link
+          href="#"
+          className="hover:translate-x-2 transition duration-300"
+        >
+          Currency Selector
+        </Link>
+
+        <Link
+          href="#"
+          className="hover:translate-x-2 transition duration-300"
+        >
+          Login / Account
+        </Link>
+
+      </div>
+
+    </div>
+
+  </div>
+
+)}
     </nav>
 
   );

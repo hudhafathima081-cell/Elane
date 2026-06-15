@@ -80,19 +80,19 @@ export default function CollectionsPage() {
             key={index}
           >
 
-            <div className="group cursor-pointer">
+            <div className="group cursor-pointer transition duration-300 hover:-translate-y-2">
 
               <div className="overflow-hidden rounded-[30px] bg-white">
 
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500"
+                  className="w-full h-[420px] object-cover group-hover:scale-110 transition duration-500"
                 />
 
               </div>
 
-              <h2 className="mt-6 text-[28px] font-serif text-center text-black">
+              <h2 className="mt-6 text-[28px] font-serif text-center text-black group-hover:text-[#9E2F2F] transition">
 
                 {item.name}
 
