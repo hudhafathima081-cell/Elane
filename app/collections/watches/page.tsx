@@ -50,7 +50,7 @@ export default function WatchesPage() {
 
   return (
 
-    <section className="min-h-screen bg-[#F8F5F0] px-10 py-20">
+    <section className="min-h-screen bg-[#F8F5F0] text-black px-10 py-20">
 
       <h1 className="text-6xl font-serif text-center mb-20">
 
