@@ -19,14 +19,14 @@ export default function WatchesPage() {
     },
 
     {
-      name: "Swarovski Crysralline Glam Watch",
+      name: "Swarovski Crysralline",
       image: "/watch3.jpg",
       price: "₹32,999",
       slug: "gold-watch",
     },
 
     {
-      name: "Diamond Classic",
+      name: "Lola Rose",
       image: "/watch4.jpg",
       price: "₹27,999",
       slug: "diamond-classic",
