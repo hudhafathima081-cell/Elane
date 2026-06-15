@@ -40,8 +40,8 @@ export default function WatchesPage() {
     },
 
     {
-      name: "Royal Titanium",
-      image: "/watch.jpg",
+      name: "Boss",
+      image: "/watch6.jpg",
       price: "₹29,999",
       slug: "royal-titanium",
     },
