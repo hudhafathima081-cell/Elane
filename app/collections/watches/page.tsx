@@ -12,14 +12,14 @@ export default function WatchesPage() {
     },
 
     {
-      name: "Silver Royal Watch",
+      name: "Daniel Wellington",
       image: "/watch2.jpg",
       price: "₹18,999",
       slug: "silver-royal",
     },
 
     {
-      name: "Luxury Gold Watch",
+      name: "Swarovski Crysralline Glam Watch",
       image: "/watch3.jpg",
       price: "₹32,999",
       slug: "gold-watch",
