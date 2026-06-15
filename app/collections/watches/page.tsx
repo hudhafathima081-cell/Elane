@@ -13,7 +13,7 @@ export default function WatchesPage() {
 
     {
       name: "Silver Royal Watch",
-      image: "/watch.jpg",
+      image: "/watch2.jpg",
       price: "₹18,999",
       slug: "silver-royal",
     },
