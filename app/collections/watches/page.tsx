@@ -27,14 +27,14 @@ export default function WatchesPage() {
 
     {
       name: "Diamond Classic",
-      image: "/watch.jpg",
+      image: "/watch4.jpg",
       price: "₹27,999",
       slug: "diamond-classic",
     },
 
     {
       name: "Midnight Elite",
-      image: "/watch.jpg",
+      image: "/watch5.jpg",
       price: "₹21,999",
       slug: "midnight-elite",
     },
