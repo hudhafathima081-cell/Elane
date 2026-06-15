@@ -20,7 +20,7 @@ export default function WatchesPage() {
 
     {
       name: "Luxury Gold Watch",
-      image: "/watch.jpg",
+      image: "/watch3.jpg",
       price: "₹32,999",
       slug: "gold-watch",
     },
