@@ -74,11 +74,9 @@ export default function WatchesPage() {
 
             <div className="p-8">
 
-              <h2 className="text-3xl font-serif mb-4">
-
-                {watch.name}
-
-              </h2>
+              <h2 className="text-3xl font-serif text-black mb-2">
+  {watch.name}
+</h2>
 
               <p className="text-[#A44A3F] text-xl mb-6">
 
@@ -88,8 +86,8 @@ export default function WatchesPage() {
 
               <Link href="/cart">
 
-<button className="bg-black text-white px-8 py-4 rounded-full tracking-[0.2em]">
-  ADD TO CART
+<button className="w-full bg-black text-white py-4 rounded-full tracking-[0.25em] uppercase text-sm hover:bg-[#9E2F2F] transition">
+  Add To Cart
 </button>
 
 </Link>
