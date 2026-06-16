@@ -133,49 +133,49 @@ export default function Navbar() {
         </Link>
 
         <Link
-          href="#"
+          href="/about"
           className="hover:translate-x-2 transition duration-300"
         >
           About Us
         </Link>
 
         <Link
-          href="#"
+          href="/contact"
           className="hover:translate-x-2 transition duration-300"
         >
           Contact
         </Link>
 
         <Link
-          href="#"
+          href="/shipping"
           className="hover:translate-x-2 transition duration-300"
         >
           Shipping Policy
         </Link>
 
         <Link
-          href="#"
+          href="/returns"
           className="hover:translate-x-2 transition duration-300"
         >
           Return Policy
         </Link>
 
         <Link
-          href="#"
+          href="/track-order"
           className="hover:translate-x-2 transition duration-300"
         >
           Track Order
         </Link>
 
         <Link
-          href="#"
+          href="/currency"
           className="hover:translate-x-2 transition duration-300"
         >
           Currency Selector
         </Link>
 
         <Link
-          href="#"
+          href="/account"
           className="hover:translate-x-2 transition duration-300"
         >
           Login / Account
