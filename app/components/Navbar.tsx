@@ -123,7 +123,7 @@ export default function Navbar() {
       </button>
 
       {/* MENU LINKS */}
-      <div className="flex flex-col gap-6 text-[18px] font-light">
+      <div className="flex flex-col gap-6 text-[18px] text-black font-light">
 
         <Link
           href="/"
