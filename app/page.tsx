@@ -38,7 +38,7 @@ export default function Home() {
   </div>
 
 </section>
-<section className="bg-[#D7E3D0] py-20">
+<section className="bg-[#F8F4EE] py-20">
 
   <div className="flex justify-between items-center px-10 mb-12">
 
@@ -48,7 +48,7 @@ export default function Home() {
 
     <a
       href="/collections"
-      className="text-white text-xl underline"
+      className="text-black text-xl underline"
     >
       View All
     </a>
@@ -63,7 +63,7 @@ export default function Home() {
         src="/watch.jpg"
         className="rounded-[30px] h-[350px] w-full object-cover group-hover:scale-105 transition duration-500"
       />
-      <h3 className="mt-5 text-white text-2xl">
+      <h3 className="mt-5 text-black text-2xl">
         Watches →
       </h3>
     </a>
@@ -74,7 +74,7 @@ export default function Home() {
         src="/ring.jpg"
         className="rounded-[30px] h-[350px] w-full object-cover group-hover:scale-105 transition duration-500"
       />
-      <h3 className="mt-5 text-white text-2xl">
+      <h3 className="mt-5 text-black text-2xl">
         Rings →
       </h3>
     </a>
@@ -85,7 +85,7 @@ export default function Home() {
         src="/bracelet.jpg"
         className="rounded-[30px] h-[350px] w-full object-cover group-hover:scale-105 transition duration-500"
       />
-      <h3 className="mt-5 text-white text-2xl">
+      <h3 className="mt-5 text-black text-2xl">
         Bracelets →
       </h3>
     </a>
@@ -96,7 +96,7 @@ export default function Home() {
         src="/bangle.jpg"
         className="rounded-[30px] h-[350px] w-full object-cover group-hover:scale-105 transition duration-500"
       />
-      <h3 className="mt-5 text-white text-2xl">
+      <h3 className="mt-5 text-black text-2xl">
         Bangles →
       </h3>
     </a>
