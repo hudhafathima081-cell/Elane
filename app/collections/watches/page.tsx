@@ -69,7 +69,7 @@ export default function WatchesPage() {
             <img
               src={watch.image}
               alt={watch.name}
-              className="w-full h-[420px] object-cover"
+className="w-full h-[420px] object-cover rounded-[30px]"
             />
 
             <div className="p-8">

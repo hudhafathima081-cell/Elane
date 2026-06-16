@@ -6,7 +6,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
 
-    <nav className="w-full bg-[#F8F4EE] border-b border-[#ece4d8]">
+    <nav className="sticky top-0 z-50 w-full bg-[#F8F4EE]/95 backdrop-blur-md border-b border-[#ece4d8]">
 
       {/* TOP BAR */}
       <div className="text-center py-3 text-[13px] tracking-[0.25em] uppercase text-black border-b border-[#ece4d8]">
