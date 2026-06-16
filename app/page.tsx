@@ -55,47 +55,47 @@ export default function Home() {
 
   </div>
 
-  <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-10">
+  <div className="flex gap-8 overflow-x-auto pb-4 scrollbar-hide">
 
     {/* WATCHES */}
-    <a href="/collections/watches" className="group cursor-pointer">
+    <a href="/collections/watches" className="group cursor-pointer min-w-[320px] flex-shrink-0">
       <img
-        src="/watch.jpg"
-        className="rounded-[30px] h-[350px] w-full object-cover group-hover:scale-105 transition duration-500"
-      />
+  src="/watch.jpg"
+  className="rounded-[30px] h-[350px] w-full object-cover transition duration-500 group-hover:scale-105"
+/>
       <h3 className="mt-5 text-black text-2xl">
         Watches →
       </h3>
     </a>
 
     {/* RINGS */}
-    <a href="/collections/rings" className="group cursor-pointer">
+    <a href="/collections/rings" className="group cursor-pointer min-w-[320px] flex-shrink-0">
       <img
-        src="/ring.jpg"
-        className="rounded-[30px] h-[350px] w-full object-cover group-hover:scale-105 transition duration-500"
-      />
+  src="/ring.jpg"
+  className="rounded-[30px] h-[350px] w-full object-cover transition duration-500 group-hover:scale-105"
+/>
       <h3 className="mt-5 text-black text-2xl">
         Rings →
       </h3>
     </a>
 
     {/* BRACELETS */}
-    <a href="/collections/bracelets" className="group cursor-pointer">
+    <a href="/collections/bracelets" className="group cursor-pointer min-w-[320px] flex-shrink-0">
       <img
-        src="/bracelet.jpg"
-        className="rounded-[30px] h-[350px] w-full object-cover group-hover:scale-105 transition duration-500"
-      />
+  src="/bracelet.jpg"
+  className="rounded-[30px] h-[350px] w-full object-cover transition duration-500 group-hover:scale-105"
+/>
       <h3 className="mt-5 text-black text-2xl">
         Bracelets →
       </h3>
     </a>
 
     {/* BANGLES */}
-    <a href="/collections/bangles" className="group cursor-pointer">
+    <a href="/collections/bangles" className="group cursor-pointer min-w-[320px] flex-shrink-0">
       <img
-        src="/bangle.jpg"
-        className="rounded-[30px] h-[350px] w-full object-cover group-hover:scale-105 transition duration-500"
-      />
+  src="/bangle.jpg"
+  className="rounded-[30px] h-[350px] w-full object-cover transition duration-500 group-hover:scale-105"
+/>
       <h3 className="mt-5 text-black text-2xl">
         Bangles →
       </h3>
