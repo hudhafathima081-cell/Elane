@@ -1,17 +1,23 @@
-export default function AboutPage() {
+export default function AccountPage() {
   return (
 
     <div className="min-h-screen bg-[#F8F4EE] p-20">
 
       <h1 className="text-6xl font-serif mb-10">
-        About ÉLANE
+        Login / Account
       </h1>
 
-      <p className="text-lg leading-9 max-w-3xl">
-        ÉLANE creates timeless luxury accessories
-        crafted with elegance, sophistication and
-        modern beauty.
-      </p>
+      <input
+        type="email"
+        placeholder="Email"
+        className="border p-4 rounded-xl block mb-4 w-[400px]"
+      />
+
+      <input
+        type="password"
+        placeholder="Password"
+        className="border p-4 rounded-xl block w-[400px]"
+      />
 
     </div>
 
