@@ -13,7 +13,7 @@ export default function Home() {
 
   {/* Background Image */}
   <img
-    src="/model.jpg"
+    src="/front.jpg"
     alt="Elane Collection"
     className="absolute inset-0 w-full h-full object-cover"
   />
