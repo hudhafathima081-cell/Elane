@@ -3,48 +3,7 @@ import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 
 export default function Home() {
-  const collections = [
-  {
-    name: "Watches",
-    image: "/watch.jpg",
-    link: "/collections/watches",
-  },
-  {
-    name: "Rings",
-    image: "/ring.jpg",
-    link: "/collections/rings",
-  },
-  {
-    name: "Bracelets",
-    image: "/bracelet.jpg",
-    link: "/collections/bracelets",
-  },
-  {
-    name: "Bangles",
-    image: "/bangle.jpg",
-    link: "/collections/bangles",
-  },
-  {
-    name: "Sunglasses",
-    image: "/sunglasses.jpg",
-    link: "/collections/sunglasses",
-  },
-  {
-    name: "Chains",
-    image: "/chain.jpg",
-    link: "/collections/chains",
-  },
-  {
-    name: "Earrings",
-    image: "/earring.jpg",
-    link: "/collections/earrings",
-  },
-  {
-    name: "Luxury Gifts",
-    image: "/gift.jpg",
-    link: "/collections/gifts",
-  },
-];
+  
   return (
     <main>
 
@@ -142,6 +101,51 @@ export default function Home() {
         Bangles →
       </h3>
     </a>
+
+{/* SUNGLASSES */}
+<a href="/collections/sunglasses" className="group cursor-pointer min-w-[320px]">
+  <img
+    src="/sunglasses.jpg"
+    className="rounded-[30px] h-[350px] w-full object-cover transition duration-500 group-hover:scale-105"
+  />
+  <h3 className="mt-5 text-black text-2xl group-hover:text-[#9E2F2F] transition">
+    Sunglasses →
+  </h3>
+</a>
+
+{/* CHAINS */}
+<a href="/collections/chains" className="group cursor-pointer min-w-[320px]">
+  <img
+    src="/chain.jpg"
+    className="rounded-[30px] h-[350px] w-full object-cover transition duration-500 group-hover:scale-105"
+  />
+  <h3 className="mt-5 text-black text-2xl group-hover:text-[#9E2F2F] transition">
+    Chains →
+  </h3>
+</a>
+
+{/* EARRINGS */}
+<a href="/collections/earrings" className="group cursor-pointer min-w-[320px]">
+  <img
+    src="/earring.jpg"
+    className="rounded-[30px] h-[350px] w-full object-cover transition duration-500 group-hover:scale-105"
+  />
+  <h3 className="mt-5 text-black text-2xl group-hover:text-[#9E2F2F] transition">
+    Earrings →
+  </h3>
+</a>
+
+{/* GIFTS */}
+<a href="/collections/gifts" className="group cursor-pointer min-w-[320px]">
+  <img
+    src="/gift.jpg"
+    className="rounded-[30px] h-[350px] w-full object-cover transition duration-500 group-hover:scale-105"
+  />
+  <h3 className="mt-5 text-black text-2xl group-hover:text-[#9E2F2F] transition">
+    Luxury Gifts →
+  </h3>
+</a>
+    
 
   </div>
 
