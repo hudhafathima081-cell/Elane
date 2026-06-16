@@ -3,6 +3,48 @@ import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 
 export default function Home() {
+  const collections = [
+  {
+    name: "Watches",
+    image: "/watch.jpg",
+    link: "/collections/watches",
+  },
+  {
+    name: "Rings",
+    image: "/ring.jpg",
+    link: "/collections/rings",
+  },
+  {
+    name: "Bracelets",
+    image: "/bracelet.jpg",
+    link: "/collections/bracelets",
+  },
+  {
+    name: "Bangles",
+    image: "/bangle.jpg",
+    link: "/collections/bangles",
+  },
+  {
+    name: "Sunglasses",
+    image: "/sunglasses.jpg",
+    link: "/collections/sunglasses",
+  },
+  {
+    name: "Chains",
+    image: "/chain.jpg",
+    link: "/collections/chains",
+  },
+  {
+    name: "Earrings",
+    image: "/earring.jpg",
+    link: "/collections/earrings",
+  },
+  {
+    name: "Luxury Gifts",
+    image: "/gift.jpg",
+    link: "/collections/gifts",
+  },
+];
   return (
     <main>
 
