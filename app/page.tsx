@@ -42,7 +42,7 @@ export default function Home() {
 
   <div className="flex justify-between items-center px-10 mb-12">
 
-    <h2 className="text-6xl text-white font-light">
+    <h2 className="text-6xl text-black font-light">
       Collections
     </h2>
 
@@ -58,7 +58,7 @@ export default function Home() {
   <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-10">
 
     {/* WATCHES */}
-    <a href="/collections/watches" className="group">
+    <a href="/collections/watches" className="group cursor-pointer">
       <img
         src="/watch.jpg"
         className="rounded-[30px] h-[350px] w-full object-cover group-hover:scale-105 transition duration-500"
@@ -69,7 +69,7 @@ export default function Home() {
     </a>
 
     {/* RINGS */}
-    <a href="/collections/rings" className="group">
+    <a href="/collections/rings" className="group cursor-pointer">
       <img
         src="/ring.jpg"
         className="rounded-[30px] h-[350px] w-full object-cover group-hover:scale-105 transition duration-500"
@@ -80,7 +80,7 @@ export default function Home() {
     </a>
 
     {/* BRACELETS */}
-    <a href="/collections/bracelets" className="group">
+    <a href="/collections/bracelets" className="group cursor-pointer">
       <img
         src="/bracelet.jpg"
         className="rounded-[30px] h-[350px] w-full object-cover group-hover:scale-105 transition duration-500"
@@ -91,7 +91,7 @@ export default function Home() {
     </a>
 
     {/* BANGLES */}
-    <a href="/collections/bangles" className="group">
+    <a href="/collections/bangles" className="group cursor-pointer">
       <img
         src="/bangle.jpg"
         className="rounded-[30px] h-[350px] w-full object-cover group-hover:scale-105 transition duration-500"
