@@ -38,6 +38,72 @@ export default function Home() {
   </div>
 
 </section>
+<section className="bg-[#D7E3D0] py-20">
+
+  <div className="flex justify-between items-center px-10 mb-12">
+
+    <h2 className="text-6xl text-white font-light">
+      Collections
+    </h2>
+
+    <a
+      href="/collections"
+      className="text-white text-xl underline"
+    >
+      View All
+    </a>
+
+  </div>
+
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-10">
+
+    {/* WATCHES */}
+    <a href="/collections/watches" className="group">
+      <img
+        src="/watch.jpg"
+        className="rounded-[30px] h-[350px] w-full object-cover group-hover:scale-105 transition duration-500"
+      />
+      <h3 className="mt-5 text-white text-2xl">
+        Watches →
+      </h3>
+    </a>
+
+    {/* RINGS */}
+    <a href="/collections/rings" className="group">
+      <img
+        src="/ring.jpg"
+        className="rounded-[30px] h-[350px] w-full object-cover group-hover:scale-105 transition duration-500"
+      />
+      <h3 className="mt-5 text-white text-2xl">
+        Rings →
+      </h3>
+    </a>
+
+    {/* BRACELETS */}
+    <a href="/collections/bracelets" className="group">
+      <img
+        src="/bracelet.jpg"
+        className="rounded-[30px] h-[350px] w-full object-cover group-hover:scale-105 transition duration-500"
+      />
+      <h3 className="mt-5 text-white text-2xl">
+        Bracelets →
+      </h3>
+    </a>
+
+    {/* BANGLES */}
+    <a href="/collections/bangles" className="group">
+      <img
+        src="/bangle.jpg"
+        className="rounded-[30px] h-[350px] w-full object-cover group-hover:scale-105 transition duration-500"
+      />
+      <h3 className="mt-5 text-white text-2xl">
+        Bangles →
+      </h3>
+    </a>
+
+  </div>
+
+</section>
 
       <Footer />
 
