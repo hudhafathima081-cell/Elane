@@ -1,11 +1,4 @@
-<Link href="/cart">
-
-<button className="bg-black text-white px-8 py-4 rounded-full tracking-[0.2em]">
-  ADD TO CART
-</button>
-
-</Link>
-
+import Link from "next/link"
 export default function WatchesPage() {
 
   const watches = [
@@ -93,15 +86,15 @@ export default function WatchesPage() {
 
               </p>
 
-              <Link href={`/product/${watch.slug}`}>
+              <Link href="/cart">
 
-                <button className="w-full bg-black text-white py-4 rounded-full tracking-[0.2em] uppercase text-sm">
+<button className="bg-black text-white px-8 py-4 rounded-full tracking-[0.2em]">
+  ADD TO CART
+</button>
 
-                 Add To Cart
+</Link>
 
-                </button>
-
-              </Link>
+              
 
             </div>
 
