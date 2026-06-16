@@ -1,7 +1,7 @@
 export default function ReturnsPage() {
   return (
 
-    <div className="min-h-screen bg-[#F8F4EE] p-20">
+    <div className="min-h-screen bg-[#F8F4EE] p-20 text-black">
 
       <h1 className="text-6xl font-serif mb-10">
         Return Policy
