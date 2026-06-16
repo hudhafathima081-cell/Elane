@@ -91,7 +91,7 @@ export default function WatchesPage() {
 
                 <button className="w-full bg-black text-white py-4 rounded-full tracking-[0.2em] uppercase text-sm">
 
-                  Purchase
+                 Add To Cart
 
                 </button>
 
