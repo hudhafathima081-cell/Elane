@@ -1,4 +1,10 @@
-import Link from "next/link";
+<Link href="/cart">
+
+<button className="bg-black text-white px-8 py-4 rounded-full tracking-[0.2em]">
+  ADD TO CART
+</button>
+
+</Link>
 
 export default function WatchesPage() {
 
