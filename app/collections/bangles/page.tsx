@@ -5,39 +5,39 @@ export default function WatchesPage() {
 
     const bangles = [
   {
-    name: "Aurora Chain Bracelet",
+    name: "Aurora Crystal Bangle",
     image: "/bangle1.jpg",
     price: "₹8,999",
   },
 
   {
-    name: "Sapphire Royal Bracelet",
+    name: "Sculpted Gold Bangle",
     image: "/bangle2.jpg",
     price: "₹12,999",
   },
 
   {
-    name: "Crystal Grace Bracelet",
+    name: "Monarch Chain Bangle",
     image: "/bangle3.jpg",
     price: "₹10,999",
   },
 
   {
-    name: "Royal Charm Bracelet",
+    name: "Elan Square Bangle",
     image: "/bangle4.jpg",
     price: "₹14,999",
   },
 
   {
-    name: "Celeste Stack Bracelet",
+    name: "Eternal Grace Bangle",
     image: "/bangle5.jpg",
     price: "₹11,999",
   },
 
   {
-    name: "Noir Élégance Bracelet",
+    name: "Royal Diamond Tennis Bangle",
     image: "/bangle6.jpg",
-    price: "₹16,999",
+    price: "₹29,999",
   },
 ];
 
