@@ -1,7 +1,7 @@
 import Link from "next/link"
 export default function WatchesPage() {
 
-  const bracelets = [
+
 
     const bracelets = [
   {
@@ -11,37 +11,36 @@ export default function WatchesPage() {
   },
 
   {
-    name: "Rose Luxe Bracelet",
+    name: "Sapphire Royal Bracelet",
     image: "/bracelet2.jpg",
     price: "₹12,999",
   },
 
   {
-    name: "Celeste Link Bracelet",
+    name: "Crystal Grace Bracelet",
     image: "/bracelet3.jpg",
     price: "₹10,999",
   },
 
   {
-    name: "Infinity Charm Bracelet",
+    name: "Royal Charm Bracelet",
     image: "/bracelet4.jpg",
     price: "₹14,999",
   },
 
   {
-    name: "Golden Grace Bracelet",
+    name: "Celeste Stack Bracelet",
     image: "/bracelet5.jpg",
     price: "₹11,999",
   },
 
   {
-    name: "Royal Élégance Bracelet",
+    name: "Noir Élégance Bracelet",
     image: "/bracelet6.jpg",
     price: "₹16,999",
   },
 ];
 
-  ];
 
   return (
 
