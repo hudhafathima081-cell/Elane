@@ -6,42 +6,42 @@ export default function SunglassesPage() {
 
     {
       name: "Saint Laurent Noir",
-      image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083",
+      image: "https://images.unsplash.com/photo-1719667456369-528013092d88?q=80&w=399&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       price: "₹18,999",
       slug: "saint-laurent-noir",
     },
 
     {
       name: "Gucci Riviera",
-      image: "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+      image: "https://unsplash.com/photos/black-and-brown-framed-sunglasses-on-white-textile-m5IfH3YYmmE",
       price: "₹22,999",
       slug: "gucci-riviera",
     },
 
     {
       name: "Prada Eclipse",
-      image: "https://images.unsplash.com/photo-1577803645773-f96470509666",
+      image: "https://images.unsplash.com/photo-1626122718218-f83d293f8765?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       price: "₹25,999",
       slug: "prada-eclipse",
     },
 
     {
       name: "Tom Ford Prestige",
-      image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f",
+      image: "https://plus.unsplash.com/premium_photo-1755752692284-b2d8164901f4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQ3fHx8ZW58MHx8fHx8",
       price: "₹27,999",
       slug: "tom-ford-prestige",
     },
 
     {
       name: "Versace Royale",
-      image: "https://images.unsplash.com/photo-1511920170033-f8396924c348",
+      image: "https://images.unsplash.com/photo-1623071279541-3cdd462f4363?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       price: "₹24,999",
       slug: "versace-royale",
     },
 
     {
       name: "Cartier Lumière",
-      image: "https://images.unsplash.com/photo-1511920170033-f8396924c348",
+      image: "https://images.unsplash.com/photo-1587304883316-2ce43897de48?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       price: "₹31,999",
       slug: "cartier-lumiere",
     },
