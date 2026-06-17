@@ -9,27 +9,27 @@ export default function WatchesPage() {
   price: "₹12,999",
 },
 {
-  name: "Rose Gold Ring",
+  name: "Pearl Ring",
   image: "/ring2.jpg",
   price: "₹15,999",
 },
 {
-  name: "Crystal Ring",
+  name: "Grace Diamond Ring",
   image: "/ring3.jpg",
   price: "₹9,999",
 },
 {
-  name: "Luxury Diamond Ring",
+  name: "Rose Etoile Ring",
   image: "/ring4.jpg",
   price: "₹19,999",
 },
 {
-  name: "Pearl Ring",
+  name: "Infinity Grace Ring",
   image: "/ring5.jpg",
   price: "₹13,999",
 },
 {
-  name: "Elite Diamond Ring",
+  name: "Victoria Diamond Ring",
   image: "/ring6.jpg",
   price: "₹24,999",
 },
