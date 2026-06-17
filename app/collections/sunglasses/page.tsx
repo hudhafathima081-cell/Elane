@@ -13,7 +13,7 @@ export default function SunglassesPage() {
 
     {
       name: "Gucci Riviera",
-      image: "https://unsplash.com/photos/black-and-brown-framed-sunglasses-on-white-textile-m5IfH3YYmmE",
+      image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       price: "₹22,999",
       slug: "gucci-riviera",
     },
@@ -41,7 +41,7 @@ export default function SunglassesPage() {
 
     {
       name: "Cartier Lumière",
-      image: "https://images.unsplash.com/photo-1587304883316-2ce43897de48?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "https://images.unsplash.com/photo-1519536884455-1a7a58a25322?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8",
       price: "₹31,999",
       slug: "cartier-lumiere",
     },
