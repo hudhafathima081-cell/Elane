@@ -5,23 +5,23 @@ export default function SunglassesPage() {
   const sunglasses = [
 
     {
-      name: "Saint Laurent Noir",
+      name: "Celeste Pearl Medallion Necklace",
       image: "https://i.pinimg.com/1200x/59/38/4a/59384afca7cc8c24382634032d6dcfcc.jpg",
       price: "₹18,999",
       slug: "saint-laurent-noir",
     },
 
     {
-      name: "Gucci Riviera",
+      name: "Monaco Link Pendant Chain",
       image: "https://i.pinimg.com/736x/c6/d4/ad/c6d4adff9c60bbfa4a07c36b52d97e3f.jpg",
-      price: "₹22,999",
+      price: "₹26,999",
       slug: "gucci-riviera",
     },
 
     {
-      name: "Prada Eclipse",
+      name: "Aurelia Gold Chain",
       image: "https://i.pinimg.com/1200x/80/33/80/803380d085c2676d37919623f660422c.jpg",
-      price: "₹25,999",
+      price: "₹16,999",
       slug: "prada-eclipse",
     },
 
