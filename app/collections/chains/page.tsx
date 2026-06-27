@@ -6,7 +6,7 @@ export default function SunglassesPage() {
 
     {
       name: "Saint Laurent Noir",
-      image: "https://in.pinterest.com/pin/5770305766570884/",
+      image: "https://i.pinimg.com/1200x/59/38/4a/59384afca7cc8c24382634032d6dcfcc.jpg",
       price: "₹18,999",
       slug: "saint-laurent-noir",
     },
@@ -20,28 +20,28 @@ export default function SunglassesPage() {
 
     {
       name: "Prada Eclipse",
-      image: "https://in.pinterest.com/pin/1059964462299887008/",
+      image: "https://i.pinimg.com/1200x/80/33/80/803380d085c2676d37919623f660422c.jpg",
       price: "₹25,999",
       slug: "prada-eclipse",
     },
 
     {
       name: "Tom Ford Prestige",
-      image: "https://in.pinterest.com/pin/945755990516437366/",
+      image: "https://i.pinimg.com/736x/38/43/90/384390664d7fc3a488e226c6665ab48d.jpg",
       price: "₹27,999",
       slug: "tom-ford-prestige",
     },
 
     {
       name: "Versace Royale",
-      image: "https://in.pinterest.com/pin/327425835418972264/",
+      image: "https://i.pinimg.com/736x/9d/2e/a1/9d2ea17cc27a835962523e5cff78c547.jpg",
       price: "₹24,999",
       slug: "versace-royale",
     },
 
     {
       name: "Cartier Lumière",
-      image: "https://in.pinterest.com/pin/396105729739922993/",
+      image: "https://i.pinimg.com/736x/91/0a/f8/910af8c14336ec7be4964064abba98ae.jpg",
       price: "₹31,999",
       slug: "cartier-lumiere",
     },
