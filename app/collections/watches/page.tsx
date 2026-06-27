@@ -1,5 +1,9 @@
-import Link from "next/link"
+
+"use client";
+import Link from "next/link";
+import { useCart } from "@/app/context/CartContext";
 export default function WatchesPage() {
+  const { addToCart } = useCart();
 
   const watches = [
 
@@ -86,7 +90,16 @@ className="w-full h-[420px] object-cover rounded-[30px]"
 
               <Link href="/cart">
 
-<button className="w-full bg-black text-white py-4 rounded-full tracking-[0.25em] uppercase text-sm hover:bg-[#9E2F2F] transition">
+<button
+  onClick={() => {
+    addToCart({
+      name: watch.name,
+      price: Number(watch.price.replace(/[₹,]/g, "")),
+      image: watch.image,
+    });
+  }}
+  className="w-full bg-black text-white py-4 rounded-full tracking-[0.25em] uppercase text-sm hover:bg-[#9E2F2F] transition"
+>
   Add To Cart
 </button>
 
