@@ -1,6 +1,9 @@
+"use client";
 import Link from "next/link";
-
+import { useCart } from "@/app/context/CartContext";
 export default function ChainsPage() {
+
+  const { addToCart } = useCart();
 
   const chains = [
 
@@ -42,7 +45,7 @@ export default function ChainsPage() {
     {
       name: "Crystal Royale Pendant",
       image: "https://i.pinimg.com/736x/91/0a/f8/910af8c14336ec7be4964064abba98ae.jpg",
-      price: "14,999",
+      price: "₹14,999",
       slug: "Crystal",
     },
 
@@ -81,13 +84,22 @@ export default function ChainsPage() {
                 {item.price}
               </p>
 
-              <Link href="/cart">
+             
 
-                <button className="w-full bg-black text-white py-4 rounded-full tracking-[0.25em] uppercase text-sm hover:bg-[#9E2F2F] transition">
-                  Add To Cart
-                </button>
+               <button
+  onClick={() => {
+    addToCart({
+      name: item.name,
+      price: Number(item.price.replace(/[₹,]/g, "")),
+      image: item.image,
+    });
+  }}
+  className="w-full bg-black text-white py-4 rounded-full tracking-[0.25em] uppercase text-sm hover:bg-[#9E2F2F] transition   "
+>
+  Add To Cart
+</button>
 
-              </Link>
+              
 
             </div>
 
