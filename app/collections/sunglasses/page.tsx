@@ -1,7 +1,9 @@
+"use client";
 import Link from "next/link";
-
+import { useCart } from "@/app/context/CartContext";
 export default function SunglassesPage() {
 
+  const { addToCart } = useCart();
   const sunglasses = [
 
     {
@@ -83,9 +85,18 @@ export default function SunglassesPage() {
 
               <Link href="/cart">
 
-                <button className="w-full bg-black text-white py-4 rounded-full tracking-[0.25em] uppercase text-sm hover:bg-[#9E2F2F] transition">
-                  Add To Cart
-                </button>
+                <button
+  onClick={() => {
+    addToCart({
+      name: item.name,
+      price: Number(item.price.replace(/[₹,]/g, "")),
+      image: item.image,
+    });
+  }}
+  className="w-full bg-black text-white py-4 rounded-full tracking-[0.25em] uppercase text-sm hover:bg-[#9E2F2F] transition"
+>
+  Add To Cart
+</button>
 
               </Link>
 
