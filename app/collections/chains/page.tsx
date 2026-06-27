@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-export default function SunglassesPage() {
+export default function ChainsPage() {
 
-  const sunglasses = [
+  const chains = [
 
     {
       name: "Celeste Pearl Medallion Necklace",
@@ -14,7 +14,7 @@ export default function SunglassesPage() {
     {
       name: "Monaco Link Pendant Chain",
       image: "https://i.pinimg.com/736x/c6/d4/ad/c6d4adff9c60bbfa4a07c36b52d97e3f.jpg",
-      price: "₹26,999",
+      price: "₹14,999",
       slug: "gucci-riviera",
     },
 
@@ -26,24 +26,24 @@ export default function SunglassesPage() {
     },
 
     {
-      name: "Tom Ford Prestige",
+      name: "Aurora Pearl Pendan",
       image: "https://i.pinimg.com/736x/38/43/90/384390664d7fc3a488e226c6665ab48d.jpg",
-      price: "₹27,999",
+      price: "₹18,999",
       slug: "tom-ford-prestige",
     },
 
     {
-      name: "Versace Royale",
+      name: "Monaco Layered Gold",
       image: "https://i.pinimg.com/736x/9d/2e/a1/9d2ea17cc27a835962523e5cff78c547.jpg",
       price: "₹24,999",
       slug: "versace-royale",
     },
 
     {
-      name: "Cartier Lumière",
+      name: "Crystal Royale Pendant",
       image: "https://i.pinimg.com/736x/91/0a/f8/910af8c14336ec7be4964064abba98ae.jpg",
-      price: "₹31,999",
-      slug: "cartier-lumiere",
+      price: "14,999",
+      slug: "Crystal",
     },
 
   ];
@@ -53,12 +53,12 @@ export default function SunglassesPage() {
     <section className="min-h-screen bg-[#F8F5F0] text-black px-10 py-20">
 
       <h1 className="text-6xl font-serif text-center mb-20">
-        Luxury Sunglasses
+        Luxury Chains
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
 
-        {sunglasses.map((item, index) => (
+        {chains.map((item, index) => (
 
           <div
             key={index}
