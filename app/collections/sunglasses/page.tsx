@@ -93,7 +93,7 @@ export default function SunglassesPage() {
       image: item.image,
     });
   }}
-  className="w-full bg-black text-white py-4 rounded-full tracking-[0.25em] uppercase text-sm hover:bg-[#9E2F2F] transition"
+  className="w-full bg-black text-white py-4 rounded-full tracking-[0.25em] uppercase text-sm hover:bg-[#9E2F2F] transition "
 >
   Add To Cart
 </button>

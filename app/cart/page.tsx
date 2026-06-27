@@ -12,7 +12,7 @@ export default function CartPage() {
   );
 
   return (
-    <div className="min-h-screen bg-[#F8F4EE] px-10 py-20">
+    <div className="min-h-screen bg-[#F8F4EE] px-10 py-20 text-black">
 
       <h1 className="text-5xl font-serif mb-12">
         Shopping Cart
