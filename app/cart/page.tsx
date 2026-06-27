@@ -1,30 +1,85 @@
-export default function CartPage() {
-  return (
-    <div className="min-h-screen p-20 bg-[#F8F4EE] text-black">
+"use client";
 
-      <h1 className="text-5xl font-serif mb-10">
+import { useCart } from "../context/CartContext";
+
+export default function CartPage() {
+
+  const { cartItems, removeFromCart } = useCart();
+
+  const total = cartItems.reduce(
+    (sum: number, item: any) => sum + item.price,
+    0
+  );
+
+  return (
+    <div className="min-h-screen bg-[#F8F4EE] px-10 py-20">
+
+      <h1 className="text-5xl font-serif mb-12">
         Shopping Cart
       </h1>
 
-      <div className="bg-white p-8 rounded-3xl">
+      {cartItems.length === 0 ? (
 
-        <h2 className="text-2xl font-serif">
-          Nordgreen Unika
-        </h2>
+        <div className="bg-white rounded-3xl p-12 text-center">
+          <h2 className="text-2xl font-serif">
+            Your cart is empty
+          </h2>
+        </div>
 
-        <p className="mt-3 text-xl">
-          ₹24,999
-        </p>
+      ) : (
 
-      </div>
+        <>
+          <div className="space-y-6">
 
-      <div className="mt-10 text-right">
+            {cartItems.map((item: any, index: number) => (
 
-        <h2 className="text-3xl font-serif">
-          Total: ₹24,999
-        </h2>
+              <div
+                key={index}
+                className="bg-white rounded-3xl p-6 flex items-center justify-between"
+              >
 
-      </div>
+                <div className="flex items-center gap-6">
+
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-24 h-24 object-cover rounded-2xl"
+                  />
+
+                  <div>
+                    <h2 className="text-2xl font-serif">
+                      {item.name}
+                    </h2>
+
+                    <p className="text-[#A44A3F] mt-2">
+                      ₹{item.price.toLocaleString()}
+                    </p>
+                  </div>
+
+                </div>
+
+                <button
+                  onClick={() => removeFromCart(index)}
+                  className="bg-black text-white px-5 py-2 rounded-full"
+                >
+                  Remove
+                </button>
+
+              </div>
+
+            ))}
+
+          </div>
+
+          <div className="mt-10 text-right">
+
+            <h2 className="text-4xl font-serif">
+              Total: ₹{total.toLocaleString()}
+            </h2>
+
+          </div>
+        </>
+      )}
 
     </div>
   );
