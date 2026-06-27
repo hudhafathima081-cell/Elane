@@ -60,8 +60,8 @@ export default function Navbar() {
 <div className="flex items-center gap-7">
 
   {/* SEARCH ICON */}
+  <Link href="/search">
   <button className="text-black hover:opacity-70 transition">
-
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -76,8 +76,8 @@ export default function Navbar() {
         d="m21 21-4.35-4.35m1.85-5.15a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
       />
     </svg>
-
   </button>
+</Link>
 
 
   
