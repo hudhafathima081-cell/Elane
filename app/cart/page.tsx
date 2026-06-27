@@ -1,6 +1,6 @@
 export default function CartPage() {
   return (
-    <div className="min-h-screen p-20 bg-[#F8F4EE]">
+    <div className="min-h-screen p-20 bg-[#F8F4EE] text-black">
 
       <h1 className="text-5xl font-serif mb-10">
         Shopping Cart
