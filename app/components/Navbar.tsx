@@ -1,8 +1,11 @@
 "use client";
 
+import { useCart } from "@/app/context/CartContext";
 import { useState } from "react";
 import Link from "next/link";
 export default function Navbar() {
+
+  const { cart } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
   return (
 
@@ -97,7 +100,7 @@ export default function Navbar() {
   </svg>
 
   <span className="absolute -top-2 -right-2 bg-[#9E2F2F] text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">
-    0
+   {cart.length}
   </span>
 
 </button>

@@ -84,7 +84,7 @@ export default function ChainsPage() {
                 {item.price}
               </p>
 
-             
+              <Link href="/cart">
 
                <button
   onClick={() => {
@@ -99,7 +99,7 @@ export default function ChainsPage() {
   Add To Cart
 </button>
 
-              
+              </Link>
 
             </div>
 
