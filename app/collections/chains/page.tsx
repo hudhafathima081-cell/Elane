@@ -5,14 +5,14 @@ export default function ChainsPage() {
   const chains = [
 
     {
-      name: "Celeste Pearl Medallion Necklace",
+      name: "Celeste Pearl Medallion",
       image: "https://i.pinimg.com/1200x/59/38/4a/59384afca7cc8c24382634032d6dcfcc.jpg",
       price: "₹18,999",
       slug: "saint-laurent-noir",
     },
 
     {
-      name: "Monaco Link Pendant Chain",
+      name: "Monaco Link Pendant",
       image: "https://i.pinimg.com/736x/c6/d4/ad/c6d4adff9c60bbfa4a07c36b52d97e3f.jpg",
       price: "₹14,999",
       slug: "gucci-riviera",

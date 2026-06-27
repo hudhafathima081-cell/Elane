@@ -33,7 +33,7 @@ export default function EarringsPage() {
     },
 
     {
-      name: "Royal Diamond Ear Stack",
+      name: "Diamond Ear Stack",
       image: "https://i.pinimg.com/736x/ed/f2/cf/edf2cf564a3ac6d6339744384095b214.jpg",
       price: "₹24,999",
       slug: "versace-royale",
