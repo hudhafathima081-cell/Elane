@@ -77,24 +77,29 @@ export default function Navbar() {
 
 
   {/* CART ICON */}
-  <button className="text-black hover:opacity-70 transition">
+  {/* CART ICON */}
+<button className="relative text-black hover:opacity-70 transition">
 
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.7}
-      stroke="currentColor"
-      className="w-7 h-7"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M16.5 6V5a4.5 4.5 0 0 0-9 0v1M3.75 8.25h16.5l-1.2 10.2a2.25 2.25 0 0 1-2.23 1.95H7.18a2.25 2.25 0 0 1-2.23-1.95L3.75 8.25Z"
-      />
-    </svg>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.7}
+    stroke="currentColor"
+    className="w-7 h-7"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M16.5 6V5a4.5 4.5 0 0 0-9 0v1M3.75 8.25h16.5l-1.2 10.2a2.25 2.25 0 0 1-2.23 1.95H7.18a2.25 2.25 0 0 1-2.23-1.95L3.75 8.25Z"
+    />
+  </svg>
 
-  </button>
+  <span className="absolute -top-2 -right-2 bg-[#9E2F2F] text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">
+    0
+  </span>
+
+</button>
 
 </div>
 
