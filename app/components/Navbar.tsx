@@ -76,8 +76,9 @@ export default function Navbar() {
   </button>
 
 
+  
   {/* CART ICON */}
-  {/* CART ICON */}
+  <Link href="/cart">
 <button className="relative text-black hover:opacity-70 transition">
 
   <svg
@@ -100,7 +101,7 @@ export default function Navbar() {
   </span>
 
 </button>
-
+</Link>
 </div>
 
       </div>
