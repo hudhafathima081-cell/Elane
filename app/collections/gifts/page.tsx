@@ -5,42 +5,42 @@ export default function GiftsPage() {
   const gifts = [
 
     {
-      name: "Saint Laurent Noir",
+      name: "ÉLANE Pearl Clutch",
       image: "https://i.pinimg.com/736x/5d/7b/56/5d7b5649c970a3e47cc52e145bca40d5.jpg",
-      price: "₹18,999",
+      price: "₹29,999",
       slug: "saint-laurent-noir",
     },
 
     {
-      name: "Gucci Riviera",
+      name: "Ruby Jewellery Set",
       image: "https://i.pinimg.com/736x/76/e5/a6/76e5a6077abcaf01218a81982883637e.jpg",
-      price: "₹22,999",
+      price: "₹34,999",
       slug: "gucci-riviera",
     },
 
     {
-      name: "Prada Eclipse",
+      name: "Rosé Blossom Bracelet",
       image: "https://i.pinimg.com/736x/2f/c2/31/2fc2319cd5eeef87b53e97e3b52bbe30.jpg",
-      price: "₹25,999",
+      price: "19,999",
       slug: "prada-eclipse",
     },
 
     {
-      name: "Tom Ford Prestige",
+      name: "Rosé Amour Jewellery Set ",
       image: "https://i.pinimg.com/736x/0a/f1/a2/0af1a29891361b366e3923d0a4fbbc6e.jpg",
       price: "₹27,999",
       slug: "tom-ford-prestige",
     },
 
     {
-      name: "Versace Royale",
+      name: "Blush Royale Gift Hamper ",
       image: "https://i.pinimg.com/736x/50/01/89/50018988d1858c21829316658663e8c1.jpg",
-      price: "₹24,999",
+      price: "₹30,000",
       slug: "versace-royale",
     },
 
     {
-      name: "Cartier Lumière",
+      name: "Pearl Éclat Luxury Set  ",
       image: "https://i.pinimg.com/736x/77/10/33/771033c59545e94b965d029173eccff0.jpg",
       price: "₹31,999",
       slug: "cartier-lumiere",
