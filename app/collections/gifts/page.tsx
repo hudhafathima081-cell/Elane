@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-export default function SunglassesPage() {
+export default function GiftsPage() {
 
-  const sunglasses = [
+  const gifts = [
 
     {
       name: "Saint Laurent Noir",
@@ -53,12 +53,12 @@ export default function SunglassesPage() {
     <section className="min-h-screen bg-[#F8F5F0] text-black px-10 py-20">
 
       <h1 className="text-6xl font-serif text-center mb-20">
-        Luxury Sunglasses
+        Luxury Gifts
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
 
-        {sunglasses.map((item, index) => (
+        {gifts.map((item, index) => (
 
           <div
             key={index}
