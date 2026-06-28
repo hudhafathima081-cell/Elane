@@ -12,153 +12,79 @@ export default function CheckoutPage() {
   );
 
   return (
-    <div className="min-h-screen bg-[#F8F4EE] py-12 px-6">
+    <div className="min-h-screen bg-[#F8F4EE] py-10">
 
-      <h1 className="text-5xl font-serif text-center mb-12 text-black">
-        Checkout
-      </h1>
+      {/* Header */}
+      <div className="max-w-7xl mx-auto px-6">
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10">
+        <h1 className="text-5xl font-serif text-black">
+          Checkout
+        </h1>
 
-        {/* Billing Form */}
-        <div className="bg-white rounded-3xl shadow-lg p-8">
+        <p className="text-gray-600 mt-2">
+          Complete your order securely.
+        </p>
 
-          <h2 className="text-3xl font-serif mb-6 text-black">
-            Billing Details
-          </h2>
+        {/* Progress */}
+        <div className="flex items-center justify-center gap-5 mt-10 mb-12">
 
-          <div className="space-y-5">
-
-            <input
-              type="text"
-              placeholder="Full Name"
-              className="w-full border rounded-xl p-4 text-black"
-            />
-
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="w-full border rounded-xl p-4 text-black"
-            />
-
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              className="w-full border rounded-xl p-4 text-black"
-            />
-
-            <input
-              type="text"
-              placeholder="House / Flat No."
-              className="w-full border rounded-xl p-4 text-black"
-            />
-
-            <textarea
-              placeholder="Street Address"
-              className="w-full border rounded-xl p-4 text-black h-28"
-            />
-
-            <div className="grid grid-cols-2 gap-4">
-
-              <input
-                type="text"
-                placeholder="City"
-                className="border rounded-xl p-4 text-black"
-              />
-
-              <input
-                type="text"
-                placeholder="State"
-                className="border rounded-xl p-4 text-black"
-              />
-
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center">
+              1
             </div>
+            <span className="text-black font-medium">
+              Review
+            </span>
+          </div>
 
-            <input
-              type="text"
-              placeholder="PIN Code"
-              className="w-full border rounded-xl p-4 text-black"
-            />
+          <div className="w-20 h-[2px] bg-black"></div>
 
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10 rounded-full border-2 border-black flex items-center justify-center">
+              2
+            </div>
+            <span className="text-black">
+              Payment
+            </span>
+          </div>
+
+          <div className="w-20 h-[2px] bg-gray-300"></div>
+
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center">
+              3
+            </div>
+            <span className="text-gray-500">
+              Confirmation
+            </span>
           </div>
 
         </div>
 
-        {/* Order Summary */}
-        <div className="bg-white rounded-3xl shadow-lg p-8">
+        {/* Two Columns */}
+        <div className="grid lg:grid-cols-3 gap-10">
 
-          <h2 className="text-3xl font-serif mb-6 text-black">
-            Order Summary
-          </h2>
+          {/* Billing Section */}
+          <div className="lg:col-span-2 bg-white rounded-3xl shadow-md p-8">
 
-          <div className="space-y-5">
+            <h2 className="text-3xl font-serif text-black mb-8">
+              Billing Details
+            </h2>
 
-           {cartItems.map((item: any, index: number) => (
-
-  <div
-    key={index}
-    className="flex items-center justify-between border-b pb-4"
-  >
-
-    <div className="flex items-center gap-4">
-
-      <img
-        src={item.image}
-        alt={item.name}
-        className="w-20 h-20 rounded-xl object-cover"
-      />
-
-      <div>
-        <h3 className="text-black font-medium">
-          {item.name}
-        </h3>
-
-        <p className="text-[#A44A3F]">
-          ₹{item.price.toLocaleString()}
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-))}
+            {/* PART 2 WILL START HERE */}
 
           </div>
 
-          <div className="mt-8 space-y-3">
+          {/* Order Summary */}
+          <div className="bg-white rounded-3xl shadow-md p-8">
 
-            <div className="flex justify-between text-black">
-              <span>Subtotal</span>
-              <span>₹{total}</span>
-            </div>
+            <h2 className="text-3xl font-serif text-black mb-8">
+              Order Summary
+            </h2>
 
-            <div className="flex justify-between text-black">
-              <span>Shipping</span>
-              <span>FREE</span>
-            </div>
-
-            <hr />
-
-            <div className="flex justify-between text-2xl font-bold text-[#953c30]">
-
-              <span>Total</span>
-
-              <span>₹{total}</span>
-
-            </div>
+            {/* PART 3 WILL START HERE */}
 
           </div>
-
-          <Link href="/payment">
-
-            <button className="w-full mt-8 bg-black text-white py-4 rounded-full hover:bg-[#A44A3F] transition">
-
-              Proceed to Payment
-
-            </button>
-
-          </Link>
 
         </div>
 
