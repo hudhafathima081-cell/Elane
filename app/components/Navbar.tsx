@@ -76,7 +76,7 @@ const filteredProducts = products.filter((item) =>
 <div className="flex items-center gap-7">
 
   {/* SEARCH ICON */}
-  <Link href="/search">
+  
   <button
   onClick={() => setShowSearch(!showSearch)}
   className="text-black hover:opacity-70 transition"
@@ -96,7 +96,7 @@ const filteredProducts = products.filter((item) =>
       />
     </svg>
   </button>
-</Link>
+
 
 
   
