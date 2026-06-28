@@ -12,17 +12,15 @@ export default function Navbar() {
   const [search, setSearch] = useState("");
 
   const products = [
-  "Watch",
-  "Ring",
-  "Bracelet",
-  "Chain",
-  "Earrings",
-  "Sunglasses",
-  "Luxury Gift",
+  { name: "Watch", href: "/collections/watches" },
+  { name: "Ring", href: "/collections/rings" },
+  { name: "Chain", href: "/collections/chains" },
+  { name: "Earrings", href: "/collections/earrings" },
+  { name: "Sunglasses", href: "/collections/sunglasses" },
 ];
 
 const filteredProducts = products.filter((item) =>
-  item.toLowerCase().includes(search.toLowerCase())
+  item.name.toLowerCase().includes(search.toLowerCase())
 );
   return (
 
