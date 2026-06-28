@@ -303,7 +303,62 @@ export default function CheckoutPage() {
   </div>
 
 </div>
+<div className="mt-8">
 
+  <h3 className="text-xl font-semibold text-black mb-3">
+    Have a Coupon?
+  </h3>
+
+  <div className="flex gap-3">
+
+    <input
+      type="text"
+      placeholder="Enter coupon code"
+      className="flex-1 border border-gray-300 rounded-xl p-4 text-black"
+    />
+
+    <button className="bg-black text-white px-6 rounded-xl hover:bg-[#A44A3F] transition">
+      Apply
+    </button>
+
+  </div>
+
+</div>
+<div className="mt-8 border rounded-2xl p-5">
+
+  <label className="flex items-center gap-3 cursor-pointer">
+
+    <input type="checkbox" />
+
+    <div>
+
+      <h3 className="text-black font-semibold">
+        Premium Gift Wrapping
+      </h3>
+
+      <p className="text-gray-500">
+        Elegant luxury gift box + personalized message (₹199)
+      </p>
+
+    </div>
+
+  </label>
+
+</div>
+
+<div className="mt-8">
+
+  <h3 className="text-xl font-semibold text-black mb-3">
+    Order Notes
+  </h3>
+
+  <textarea
+    rows={4}
+    placeholder="Add delivery instructions..."
+    className="w-full border border-gray-300 rounded-xl p-4 text-black"
+  />
+
+</div>
 <div className="mt-8">
 
   <Link href="/payment">
