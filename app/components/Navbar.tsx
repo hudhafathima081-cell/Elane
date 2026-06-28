@@ -228,12 +228,13 @@ const filteredProducts = products.filter((item) =>
     {search && (
       <div className="mt-2 bg-white rounded shadow">
         {filteredProducts.map((item, index) => (
-          <div
+          <Link
             key={index}
-            className="p-3 hover:bg-gray-100 cursor-pointer"
+            href={item.href}
+            className="block p-3 text-black hover:bg-gray-100 cursor-pointer"
           >
-            {item}
-          </div>
+            {item.name}
+          </Link>
         ))}
       </div>
     )}
