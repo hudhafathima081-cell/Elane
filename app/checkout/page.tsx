@@ -93,24 +93,36 @@ export default function CheckoutPage() {
 
           <div className="space-y-5">
 
-            {cartItems.map((item: any, index: number) => (
+           {cartItems.map((item: any, index: number) => (
 
-              <div
-                key={index}
-                className="flex justify-between border-b pb-3"
-              >
+  <div
+    key={index}
+    className="flex items-center justify-between border-b pb-4"
+  >
 
-                <span className="text-black">
-                  {item.name}
-                </span>
+    <div className="flex items-center gap-4">
 
-                <span className="text-[#A44A3F]">
-                  ₹{item.price}
-                </span>
+      <img
+        src={item.image}
+        alt={item.name}
+        className="w-20 h-20 rounded-xl object-cover"
+      />
 
-              </div>
+      <div>
+        <h3 className="text-black font-medium">
+          {item.name}
+        </h3>
 
-            ))}
+        <p className="text-[#A44A3F]">
+          ₹{item.price.toLocaleString()}
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+))}
 
           </div>
 
