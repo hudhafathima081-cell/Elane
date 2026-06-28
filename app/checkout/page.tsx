@@ -72,6 +72,151 @@ export default function CheckoutPage() {
             </h2>
 
             {/* PART 2 WILL START HERE */}
+            <div className="grid md:grid-cols-2 gap-5">
+
+  <div>
+    <label className="block text-black font-medium mb-2">
+      Full Name
+    </label>
+
+    <input
+      type="text"
+      placeholder="John Doe"
+      className="w-full border border-gray-300 rounded-xl p-4 text-black focus:outline-none focus:border-black"
+    />
+  </div>
+
+  <div>
+    <label className="block text-black font-medium mb-2">
+      Email Address
+    </label>
+
+    <input
+      type="email"
+      placeholder="john@email.com"
+      className="w-full border border-gray-300 rounded-xl p-4 text-black focus:outline-none focus:border-black"
+    />
+  </div>
+
+  <div>
+    <label className="block text-black font-medium mb-2">
+      Phone Number
+    </label>
+
+    <input
+      type="tel"
+      placeholder="+91 XXXXX XXXXX"
+      className="w-full border border-gray-300 rounded-xl p-4 text-black focus:outline-none focus:border-black"
+    />
+  </div>
+
+  <div>
+    <label className="block text-black font-medium mb-2">
+      PIN Code
+    </label>
+
+    <input
+      type="text"
+      placeholder="671121"
+      className="w-full border border-gray-300 rounded-xl p-4 text-black focus:outline-none focus:border-black"
+    />
+  </div>
+
+</div>
+
+<div className="mt-6">
+
+  <label className="block text-black font-medium mb-2">
+    Street Address
+  </label>
+
+  <textarea
+    rows={4}
+    placeholder="House No, Street, Area"
+    className="w-full border border-gray-300 rounded-xl p-4 text-black focus:outline-none focus:border-black"
+  />
+
+</div>
+
+<div className="grid md:grid-cols-2 gap-5 mt-6">
+
+  <div>
+    <label className="block text-black font-medium mb-2">
+      City
+    </label>
+
+    <input
+      type="text"
+      placeholder="Kasaragod"
+      className="w-full border border-gray-300 rounded-xl p-4 text-black"
+    />
+  </div>
+
+  <div>
+    <label className="block text-black font-medium mb-2">
+      State
+    </label>
+
+    <select className="w-full border border-gray-300 rounded-xl p-4 text-black">
+      <option>Kerala</option>
+      <option>Karnataka</option>
+      <option>Tamil Nadu</option>
+      <option>Maharashtra</option>
+      <option>Goa</option>
+    </select>
+  </div>
+
+</div>
+
+<h2 className="text-3xl font-serif text-black mt-10 mb-6">
+  Shipping Method
+</h2>
+
+<div className="space-y-4">
+
+  <div className="border-2 border-black rounded-2xl p-5 cursor-pointer">
+    <div className="flex justify-between">
+
+      <div>
+        <h3 className="text-black font-semibold">
+          Standard Delivery
+        </h3>
+
+        <p className="text-gray-600">
+          Delivery in 3–5 business days
+        </p>
+      </div>
+
+      <span className="font-bold text-green-600">
+        FREE
+      </span>
+
+    </div>
+  </div>
+
+  <div className="border rounded-2xl p-5 cursor-pointer">
+
+    <div className="flex justify-between">
+
+      <div>
+        <h3 className="text-black font-semibold">
+          Express Delivery
+        </h3>
+
+        <p className="text-gray-600">
+          Delivery in 1–2 business days
+        </p>
+      </div>
+
+      <span className="font-bold text-black">
+        ₹149
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
 
           </div>
 
