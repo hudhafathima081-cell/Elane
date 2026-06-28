@@ -82,20 +82,76 @@ export default function PaymentPage() {
   <h3 className="text-xl font-semibold text-black">
     📱 UPI Payment
   </h3>
+  
 
-  <p className="text-gray-500">
+  <p className="text-black">
     Google Pay • PhonePe • Paytm
   </p>
 </div>
 
-            <div className="border rounded-2xl p-5 cursor-pointer hover:border-black">
-              🏦 Net Banking
-            </div>
+           <div
+  onClick={() => setPaymentMethod("bank")}
+  className={`border rounded-2xl p-5 cursor-pointer transition ${
+    paymentMethod === "bank"
+      ? "border-black bg-[#F8F4EE]"
+      : "border-gray-300"
+  }`}
+>
+  <h3 className="text-xl font-semibold text-black">
+    🏦 Net Banking
+  </h3>
 
-            <div className="border rounded-2xl p-5 cursor-pointer hover:border-black">
-              💵 Cash on Delivery
-            </div>
+  <p className="text-gray-500">
+    SBI • HDFC • ICICI • Axis
+  </p>
+</div>
 
+{paymentMethod === "bank" && (
+
+<div className="mt-5">
+
+  <select className="w-full border rounded-xl p-4 text-black bg-white">
+
+    <option>Select Your Bank</option>
+
+    <option>State Bank of India</option>
+
+    <option>HDFC Bank</option>
+
+    <option>ICICI Bank</option>
+
+    <option>Axis Bank</option>
+
+    <option>Canara Bank</option>
+
+  </select>
+
+</div>
+
+)}
+           <div
+  onClick={() => setPaymentMethod("cod")}
+  className={`border rounded-2xl p-5 cursor-pointer transition ${
+    paymentMethod === "cod"
+      ? "border-black bg-[#F8F4EE]"
+      : "border-gray-300"
+  }`}
+>
+  💵 Cash on Delivery
+</div>
+{paymentMethod === "cod" && (
+
+<div className="mt-8 p-5 bg-yellow-50 rounded-xl text-black">
+
+  <p className="text-black">
+
+    Cash will be collected when your order is delivered.
+
+  </p>
+
+</div>
+
+)}
           </div>
 
         </div>
