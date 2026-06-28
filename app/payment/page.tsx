@@ -4,45 +4,78 @@ import Link from "next/link";
 
 export default function PaymentPage() {
   return (
-    <div className="min-h-screen bg-[#F8F4EE] flex items-center justify-center px-6">
+    <div className="min-h-screen bg-[#F8F4EE] py-12 px-6">
 
-      <div className="bg-white p-10 rounded-3xl shadow-xl w-full max-w-lg">
+      <h1 className="text-5xl font-serif text-center text-black mb-12">
+        Secure Payment
+      </h1>
 
-        <h1 className="text-4xl font-serif text-center text-black mb-8">
-          Payment
-        </h1>
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10">
 
-        <div className="space-y-4">
+        {/* Left Side */}
+        <div className="bg-white rounded-3xl shadow-lg p-8">
 
-          <label className="flex items-center gap-3 text-black">
-            <input type="radio" name="payment" />
-            UPI
-          </label>
+          <h2 className="text-3xl font-serif text-black mb-8">
+            Payment Method
+          </h2>
 
-          <label className="flex items-center gap-3 text-black">
-            <input type="radio" name="payment" />
-            Credit / Debit Card
-          </label>
+          <div className="space-y-4">
 
-          <label className="flex items-center gap-3 text-black">
-            <input type="radio" name="payment" />
-            Net Banking
-          </label>
+            <div className="border rounded-2xl p-5 cursor-pointer hover:border-black">
+              💳 Credit / Debit Card
+            </div>
 
-          <label className="flex items-center gap-3 text-black">
-            <input type="radio" name="payment" />
-            Cash on Delivery
-          </label>
+            <div className="border rounded-2xl p-5 cursor-pointer hover:border-black">
+              📱 UPI Payment
+            </div>
+
+            <div className="border rounded-2xl p-5 cursor-pointer hover:border-black">
+              🏦 Net Banking
+            </div>
+
+            <div className="border rounded-2xl p-5 cursor-pointer hover:border-black">
+              💵 Cash on Delivery
+            </div>
+
+          </div>
 
         </div>
 
-        <Link href="/order-success">
+        {/* Right Side */}
+        <div className="bg-white rounded-3xl shadow-lg p-8">
 
-          <button className="w-full mt-10 bg-black text-white py-4 rounded-full hover:bg-[#A44A3F] transition">
-            Pay Now
-          </button>
+          <h2 className="text-3xl font-serif text-black mb-6">
+            Order Summary
+          </h2>
 
-        </Link>
+          <div className="flex justify-between text-black text-lg mb-3">
+            <span>Subtotal</span>
+            <span>₹10,000</span>
+          </div>
+
+          <div className="flex justify-between text-black text-lg mb-3">
+            <span>Shipping</span>
+            <span className="text-green-600">FREE</span>
+          </div>
+
+          <hr className="my-5"/>
+
+          <div className="flex justify-between text-2xl font-bold text-black">
+            <span>Total</span>
+            <span>₹10,000</span>
+          </div>
+
+          <Link href="/order-success">
+
+            <button className="w-full mt-10 bg-black text-white py-4 rounded-full hover:bg-[#A44A3F] transition">
+
+              Complete Order
+
+            </button>
+
+          </Link>
+
+        </div>
 
       </div>
 
