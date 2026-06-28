@@ -72,6 +72,7 @@ export default function CheckoutPage() {
             </h2>
 
             {/* PART 2 WILL START HERE */}
+            
             <div className="grid md:grid-cols-2 gap-5">
 
   <div>
@@ -211,14 +212,28 @@ export default function CheckoutPage() {
       <span className="font-bold text-black">
         ₹149
       </span>
+      
 
     </div>
+    
 
   </div>
+  <div className="mt-6">
+
+  <label className="flex items-center gap-3 text-black">
+
+    <input type="checkbox" />
+
+    Save this address for future orders
+
+  </label>
+
+</div>
 
 </div>
 
           </div>
+          
 
           {/* Order Summary */}
           <div className="bg-white rounded-3xl shadow-md p-8">
@@ -226,6 +241,7 @@ export default function CheckoutPage() {
             <h2 className="text-3xl font-serif text-black mb-8">
               Order Summary
             </h2>
+            
 
             {/* PART 3 WILL START HERE */}
             <div className="space-y-5">
@@ -359,6 +375,7 @@ export default function CheckoutPage() {
   />
 
 </div>
+
 <div className="mt-8">
 
   <Link href="/payment">
