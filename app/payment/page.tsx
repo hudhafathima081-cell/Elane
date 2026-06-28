@@ -1,8 +1,19 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
+import { useCart } from "../context/CartContext";
 
 export default function PaymentPage() {
+
+  const [paymentMethod, setPaymentMethod] = useState("card");
+
+  const { cartItems } = useCart();
+
+  const total = cartItems.reduce(
+    (sum: number, item: any) => sum + item.price,
+    0
+  );
   return (
     <div className="min-h-screen bg-[#F8F4EE] py-12 px-6">
 
