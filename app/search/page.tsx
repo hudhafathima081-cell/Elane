@@ -1,6 +1,6 @@
 export default function SearchPage() {
   return (
-    <div className="min-h-screen bg-[#F8F4EE] px-8 py-20">
+    <div className="min-h-screen bg-[#F8F4EE] px-8 py-20 text-black">
       <h1 className="text-4xl font-serif mb-8">Search</h1>
 
       <input

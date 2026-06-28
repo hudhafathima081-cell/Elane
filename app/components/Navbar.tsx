@@ -8,6 +8,22 @@ export default function Navbar() {
   const { cartItems } = useCart();
   const { cart } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const [search, setSearch] = useState("");
+
+  const products = [
+  "Watch",
+  "Ring",
+  "Bracelet",
+  "Chain",
+  "Earrings",
+  "Sunglasses",
+  "Luxury Gift",
+];
+
+const filteredProducts = products.filter((item) =>
+  item.toLowerCase().includes(search.toLowerCase())
+);
   return (
 
     <nav className="sticky top-0 z-50 w-full bg-[#F8F4EE]/95 backdrop-blur-md border-b border-[#ece4d8]">
@@ -61,7 +77,10 @@ export default function Navbar() {
 
   {/* SEARCH ICON */}
   <Link href="/search">
-  <button className="text-black hover:opacity-70 transition">
+  <button
+  onClick={() => setShowSearch(!showSearch)}
+  className="text-black hover:opacity-70 transition"
+>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -197,6 +216,30 @@ export default function Navbar() {
 
   </div>
 
+)}
+{showSearch && (
+  <div className="bg-[#F8F4EE] border-t p-4">
+    <input
+      type="text"
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+      placeholder="Search products..."
+      className="w-full border rounded-lg p-3"
+    />
+
+    {search && (
+      <div className="mt-2 bg-white rounded shadow">
+        {filteredProducts.map((item, index) => (
+          <div
+            key={index}
+            className="p-3 hover:bg-gray-100 cursor-pointer"
+          >
+            {item}
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
 )}
     </nav>
 
