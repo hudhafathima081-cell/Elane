@@ -140,7 +140,7 @@ export default function CheckoutPage() {
 
             <hr />
 
-            <div className="flex justify-between text-2xl font-bold text-black">
+            <div className="flex justify-between text-2xl font-bold text-[#953c30]">
 
               <span>Total</span>
 
