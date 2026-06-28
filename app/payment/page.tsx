@@ -6,6 +6,7 @@ import { useCart } from "../context/CartContext";
 
 export default function PaymentPage() {
 
+
   const [paymentMethod, setPaymentMethod] = useState("card");
 
   const { cartItems } = useCart();
@@ -32,13 +33,60 @@ export default function PaymentPage() {
 
           <div className="space-y-4">
 
-            <div className="border rounded-2xl p-5 cursor-pointer hover:border-black">
-              💳 Credit / Debit Card
-            </div>
+           
 
-            <div className="border rounded-2xl p-5 cursor-pointer hover:border-black">
-              📱 UPI Payment
-            </div>
+  {paymentMethod === "card" && (
+
+<div className="mt-8 space-y-5">
+
+  <input
+    type="text"
+    placeholder="Card Number"
+    className="w-full border rounded-xl p-4 text-black"
+  />
+
+  <input
+    type="text"
+    placeholder="Card Holder Name"
+    className="w-full border rounded-xl p-4 text-black"
+  />
+
+  <div className="grid grid-cols-2 gap-4">
+
+    <input
+      type="text"
+      placeholder="MM / YY"
+      className="border rounded-xl p-4 text-black"
+    />
+
+    <input
+      type="password"
+      placeholder="CVV"
+      className="border rounded-xl p-4 text-black"
+    />
+
+  </div>
+
+</div>
+
+)}
+
+            <div
+  onClick={() => setPaymentMethod("upi")}
+  className={`border rounded-2xl p-5 cursor-pointer transition ${
+    paymentMethod === "upi"
+      ? "border-black bg-[#F8F4EE]"
+      : "border-gray-300"
+  }`}
+>
+  <h3 className="text-xl font-semibold text-black">
+    📱 UPI Payment
+  </h3>
+
+  <p className="text-gray-500">
+    Google Pay • PhonePe • Paytm
+  </p>
+</div>
 
             <div className="border rounded-2xl p-5 cursor-pointer hover:border-black">
               🏦 Net Banking
@@ -51,6 +99,19 @@ export default function PaymentPage() {
           </div>
 
         </div>
+        {paymentMethod === "upi" && (
+
+<div className="mt-8">
+
+  <input
+    type="text"
+    placeholder="Enter your UPI ID"
+    className="w-full border rounded-xl p-4 text-black"
+  />
+
+</div>
+
+)}
 
         {/* Right Side */}
         <div className="bg-white rounded-3xl shadow-lg p-8">
@@ -61,7 +122,7 @@ export default function PaymentPage() {
 
           <div className="flex justify-between text-black text-lg mb-3">
             <span>Subtotal</span>
-            <span>₹10,000</span>
+            <span>{total.toLocaleString()}</span>
           </div>
 
           <div className="flex justify-between text-black text-lg mb-3">
