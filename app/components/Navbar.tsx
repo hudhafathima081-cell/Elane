@@ -224,7 +224,7 @@ const filteredProducts = products.filter((item) =>
       value={search}
       onChange={(e) => setSearch(e.target.value)}
       placeholder="Search products..."
-      className="w-full border rounded-lg p-3"
+      className="w-full border border-gray-300 rounded-lg p-3 bg-white text-black placeholder:text-gray-500 focus:outline-none"
     />
 
     {search && (
