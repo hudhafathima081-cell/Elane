@@ -228,6 +228,101 @@ export default function CheckoutPage() {
             </h2>
 
             {/* PART 3 WILL START HERE */}
+            <div className="space-y-5">
+
+  {cartItems.map((item: any, index: number) => (
+
+    <div
+      key={index}
+      className="flex items-center justify-between border-b pb-5"
+    >
+
+      <div className="flex gap-4">
+
+        <img
+          src={item.image}
+          alt={item.name}
+          className="w-20 h-20 rounded-xl object-cover"
+        />
+
+        <div>
+
+          <h3 className="text-black font-semibold">
+            {item.name}
+          </h3>
+
+          <p className="text-gray-500">
+            Qty: 1
+          </p>
+
+          <p className="text-[#A44A3F] font-semibold mt-1">
+            ₹{item.price.toLocaleString()}
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  ))}
+
+</div>
+
+<div className="mt-8 space-y-4">
+
+  <div className="flex justify-between text-black">
+    <span>Subtotal</span>
+    <span>₹{total.toLocaleString()}</span>
+  </div>
+
+  <div className="flex justify-between text-black">
+    <span>Shipping</span>
+    <span className="text-green-600 font-semibold">
+      FREE
+    </span>
+  </div>
+
+  <div className="flex justify-between text-black">
+    <span>GST (18%)</span>
+    <span>
+      ₹{Math.round(total * 0.18).toLocaleString()}
+    </span>
+  </div>
+
+  <hr />
+
+  <div className="flex justify-between text-2xl font-bold text-black">
+
+    <span>Total</span>
+
+    <span>
+      ₹{(total + Math.round(total * 0.18)).toLocaleString()}
+    </span>
+
+  </div>
+
+</div>
+
+<div className="mt-8">
+
+  <Link href="/payment">
+
+    <button className="w-full bg-black text-white py-4 rounded-full hover:bg-[#A44A3F] transition duration-300">
+
+      Proceed to Payment →
+
+    </button>
+
+  </Link>
+
+</div>
+
+<p className="text-center text-gray-500 text-sm mt-5">
+
+  🔒 Your payment is secured with SSL encryption.
+
+</p>
 
           </div>
 
