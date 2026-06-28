@@ -129,7 +129,7 @@ export default function PaymentPage() {
 </div>
 
 )}
-           <div
+        <div
   onClick={() => setPaymentMethod("cod")}
   className={`border rounded-2xl p-5 cursor-pointer transition ${
     paymentMethod === "cod"
@@ -137,16 +137,25 @@ export default function PaymentPage() {
       : "border-gray-300"
   }`}
 >
-  💵 Cash on Delivery
+  <h3 className="text-xl font-semibold text-black">
+    💵 Cash on Delivery
+  </h3>
+
+  <p className="text-gray-500">
+    Pay when your order is delivered
+  </p>
 </div>
+
 {paymentMethod === "cod" && (
 
-<div className="mt-8 p-5 bg-yellow-50 rounded-xl text-black">
+<div className="mt-5 p-5 bg-yellow-50 border border-yellow-200 rounded-xl">
 
-  <p className="text-black">
+  <p className="text-black font-medium">
+    Cash on Delivery Selected
+  </p>
 
-    Cash will be collected when your order is delivered.
-
+  <p className="text-gray-600 mt-2">
+    Please keep the exact amount ready at the time of delivery.
   </p>
 
 </div>
