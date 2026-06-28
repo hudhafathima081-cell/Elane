@@ -116,19 +116,19 @@ export default function CheckoutPage() {
 
           <div className="mt-8 space-y-3">
 
-            <div className="flex justify-between">
+            <div className="flex justify-between text-black">
               <span>Subtotal</span>
               <span>₹{total}</span>
             </div>
 
-            <div className="flex justify-between">
+            <div className="flex justify-between text-black">
               <span>Shipping</span>
               <span>FREE</span>
             </div>
 
             <hr />
 
-            <div className="flex justify-between text-2xl font-bold">
+            <div className="flex justify-between text-2xl font-bold text-black">
 
               <span>Total</span>
 
