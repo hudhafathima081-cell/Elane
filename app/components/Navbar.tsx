@@ -14,9 +14,13 @@ export default function Navbar() {
   const products = [
   { name: "Watch", href: "/collections/watches" },
   { name: "Ring", href: "/collections/rings" },
+  { name: "Bracelets", href: "/collections/bracelets" },
+   { name: "Bangles", href: "/collections/bangles" },
   { name: "Chain", href: "/collections/chains" },
   { name: "Earrings", href: "/collections/earrings" },
   { name: "Sunglasses", href: "/collections/sunglasses" },
+   { name: "Gifts", href: "/collections/gifts" },
+  
 ];
 
 const filteredProducts = products.filter((item) =>
