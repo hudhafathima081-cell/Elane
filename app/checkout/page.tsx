@@ -18,7 +18,7 @@ const [address, setAddress] = useState({
   state: "",
   pincode: "",
 });
-
+const [savedAddress, setSavedAddress] = useState<any>(null);
   const total = cartItems.reduce(
     (sum: number, item: any) => sum + item.price,
     0
@@ -365,7 +365,103 @@ const [address, setAddress] = useState({
     </h2>
 
     {/* Step 4 will go here */}
+<div className="space-y-4">
 
+  <input
+    type="text"
+    placeholder="Full Name"
+    value={address.name}
+    onChange={(e) =>
+      setAddress({ ...address, name: e.target.value })
+    }
+    className="w-full border rounded-xl p-4 text-black"
+  />
+
+  <input
+    type="tel"
+    placeholder="Phone Number"
+    value={address.phone}
+    onChange={(e) =>
+      setAddress({ ...address, phone: e.target.value })
+    }
+    className="w-full border rounded-xl p-4 text-black"
+  />
+
+  <input
+    type="text"
+    placeholder="House / Flat No."
+    value={address.house}
+    onChange={(e) =>
+      setAddress({ ...address, house: e.target.value })
+    }
+    className="w-full border rounded-xl p-4 text-black"
+  />
+
+  <textarea
+    placeholder="Street Address"
+    value={address.street}
+    onChange={(e) =>
+      setAddress({ ...address, street: e.target.value })
+    }
+    className="w-full border rounded-xl p-4 text-black h-24"
+  />
+
+  <div className="grid grid-cols-2 gap-4">
+
+    <input
+      type="text"
+      placeholder="City"
+      value={address.city}
+      onChange={(e) =>
+        setAddress({ ...address, city: e.target.value })
+      }
+      className="border rounded-xl p-4 text-black"
+    />
+
+    <input
+      type="text"
+      placeholder="State"
+      value={address.state}
+      onChange={(e) =>
+        setAddress({ ...address, state: e.target.value })
+      }
+      className="border rounded-xl p-4 text-black"
+    />
+
+  </div>
+
+  <input
+    type="text"
+    placeholder="PIN Code"
+    value={address.pincode}
+    onChange={(e) =>
+      setAddress({ ...address, pincode: e.target.value })
+    }
+    className="w-full border rounded-xl p-4 text-black"
+  />
+
+</div>
+
+<div className="flex justify-end gap-4 mt-8">
+
+  <button
+    onClick={() => setShowAddressForm(false)}
+    className="px-6 py-3 rounded-xl border"
+  >
+    Cancel
+  </button>
+
+ <button
+  onClick={() => {
+    setSavedAddress(address);
+    setShowAddressForm(false);
+  }}
+  className="bg-black text-white px-8 py-3 rounded-xl hover:bg-[#A44A3F]"
+>
+  Save Address
+</button>
+
+</div>
   </div>
 
 </div>
