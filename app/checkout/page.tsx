@@ -1,11 +1,23 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import { useCart } from "../context/CartContext";
 
 export default function CheckoutPage() {
 
   const { cartItems } = useCart();
+  const [showAddressForm, setShowAddressForm] = useState(false);
+
+const [address, setAddress] = useState({
+  name: "",
+  phone: "",
+  house: "",
+  street: "",
+  city: "",
+  state: "",
+  pincode: "",
+});
 
   const total = cartItems.reduce(
     (sum: number, item: any) => sum + item.price,
@@ -99,9 +111,12 @@ export default function CheckoutPage() {
       📍 Delivery Address
     </h2>
 
-    <button className="bg-black text-white px-5 py-2 rounded-full hover:bg-[#A44A3F] transition">
-      + Add New
-    </button>
+    <button
+  onClick={() => setShowAddressForm(true)}
+  className="bg-black text-white px-5 py-2 rounded-full hover:bg-[#A44A3F] transition"
+>
+  + Add New
+</button>
 
   </div>
 
@@ -339,7 +354,23 @@ export default function CheckoutPage() {
         </div>
 
       </div>
+{showAddressForm && (
 
+<div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+
+  <div className="bg-white rounded-3xl p-8 w-[90%] max-w-xl">
+
+    <h2 className="text-3xl font-serif text-black mb-6">
+      Add New Address
+    </h2>
+
+    {/* Step 4 will go here */}
+
+  </div>
+
+</div>
+
+)}
     </div>
   );
 }
