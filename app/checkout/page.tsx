@@ -127,20 +127,24 @@ const [savedAddress, setSavedAddress] = useState<any>(null);
       <div>
 
         <h3 className="text-xl font-semibold text-black">
-          Mohammed Mahshan
-        </h3>
+  {savedAddress?.name || "No Address Added"}
+</h3>
 
-        <p className="text-gray-600 mt-2">
-          +91 98765 43210
-        </p>
+<p className="text-gray-600 mt-2">
+  {savedAddress?.phone}
+</p>
 
-        <p className="text-gray-600">
-          House 21, MG Road,
-        </p>
+<p className="text-gray-600">
+  {savedAddress?.house}
+</p>
 
-        <p className="text-gray-600">
-          Kasaragod, Kerala - 671121
-        </p>
+<p className="text-gray-600">
+  {savedAddress?.street}
+</p>
+
+<p className="text-gray-600">
+  {savedAddress?.city}, {savedAddress?.state} - {savedAddress?.pincode}
+</p>
 
       </div>
 
