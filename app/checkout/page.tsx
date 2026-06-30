@@ -229,7 +229,41 @@ const [savedAddress, setSavedAddress] = useState<any>(null);
 
 </div>
         </div>
+<div className="bg-white rounded-3xl shadow-md p-6">
 
+  <div className="grid grid-cols-2 gap-4">
+
+    <div className="text-center">
+      🔒
+      <p className="text-black font-semibold mt-2">
+        Secure Payment
+      </p>
+    </div>
+
+    <div className="text-center">
+      🚚
+      <p className="text-black font-semibold mt-2">
+        Fast Delivery
+      </p>
+    </div>
+
+    <div className="text-center">
+      ↩️
+      <p className="text-black font-semibold mt-2">
+        Easy Returns
+      </p>
+    </div>
+
+    <div className="text-center">
+      ⭐
+      <p className="text-black font-semibold mt-2">
+        Premium Quality
+      </p>
+    </div>
+
+  </div>
+
+</div>
         {/* RIGHT */}
 
         <div>
