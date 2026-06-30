@@ -17,6 +17,7 @@ const [address, setAddress] = useState({
   city: "",
   state: "",
   pincode: "",
+  type: "Home",
 });
 const [savedAddress, setSavedAddress] = useState<any>(null);
   const total = cartItems.reduce(
@@ -443,7 +444,50 @@ const [savedAddress, setSavedAddress] = useState<any>(null);
     }
     className="w-full border rounded-xl p-4 text-black"
   />
+<div className="mt-4">
 
+  <p className="text-black font-medium mb-3">
+    Address Type
+  </p>
+
+  <div className="flex gap-3">
+
+    <button
+      onClick={() => setAddress({ ...address, type: "Home" })}
+      className={`px-5 py-2 rounded-full ${
+        address.type === "Home"
+          ? "bg-black text-white"
+          : "bg-gray-200 text-black"
+      }`}
+    >
+      🏠 Home
+    </button>
+
+    <button
+      onClick={() => setAddress({ ...address, type: "Work" })}
+      className={`px-5 py-2 rounded-full ${
+        address.type === "Work"
+          ? "bg-black text-white"
+          : "bg-gray-200 text-black"
+      }`}
+    >
+      💼 Work
+    </button>
+
+    <button
+      onClick={() => setAddress({ ...address, type: "Other" })}
+      className={`px-5 py-2 rounded-full ${
+        address.type === "Other"
+          ? "bg-black text-white"
+          : "bg-gray-200 text-black"
+      }`}
+    >
+      📍 Other
+    </button>
+
+  </div>
+
+</div>
 </div>
 
 <div className="flex justify-end gap-4 mt-8">
