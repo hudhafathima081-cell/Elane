@@ -199,7 +199,7 @@ export default function PaymentPage() {
 
           <div className="flex justify-between text-2xl font-bold text-black">
             <span>Total</span>
-            <span>₹10,000</span>
+            <span>{total}</span>
           </div>
 
           <Link href="/order-success">
