@@ -196,7 +196,21 @@ const [savedAddress, setSavedAddress] = useState<any>(null);
   </div>
 
 </div>
+<div className="bg-gradient-to-r from-pink-100 to-orange-100 rounded-3xl p-6 shadow-md">
 
+  <h2 className="text-2xl font-serif text-black">
+    🎁 Exclusive Offer
+  </h2>
+
+  <p className="text-gray-700 mt-2">
+    Use code <span className="font-bold text-[#A44A3F]">ELANE10</span> and save ₹500 on orders above ₹5,000.
+  </p>
+
+  <button className="mt-5 bg-[#A44A3F] text-white px-6 py-3 rounded-full hover:bg-black transition">
+    Apply Offer
+  </button>
+
+</div>
 {/* Offer */}
 
 <div className="bg-gradient-to-r from-[#A44A3F] to-[#D38A76] rounded-3xl p-6 text-white">
