@@ -121,42 +121,50 @@ const [savedAddress, setSavedAddress] = useState<any>(null);
 
   </div>
 
-  <div className="mt-8 border-2 border-[#A44A3F] rounded-2xl p-6">
+  <div className="mt-4">
 
-    <div className="flex justify-between">
+  <p className="text-black font-medium mb-3">
+    Address Type
+  </p>
 
-      <div>
+  <div className="flex gap-3">
 
-        <h3 className="text-xl font-semibold text-black">
-  {savedAddress?.name || "No Address Added"}
-</h3>
+    <button
+      onClick={() => setAddress({ ...address, type: "Home" })}
+      className={`px-5 py-2 rounded-full ${
+        address.type === "Home"
+          ? "bg-black text-white"
+          : "bg-gray-200 text-black"
+      }`}
+    >
+      🏠 Home
+    </button>
 
-<p className="text-gray-600 mt-2">
-  {savedAddress?.phone}
-</p>
+    <button
+      onClick={() => setAddress({ ...address, type: "Work" })}
+      className={`px-5 py-2 rounded-full ${
+        address.type === "Work"
+          ? "bg-black text-white"
+          : "bg-gray-200 text-black"
+      }`}
+    >
+      💼 Work
+    </button>
 
-<p className="text-gray-600">
-  {savedAddress?.house}
-</p>
-
-<p className="text-gray-600">
-  {savedAddress?.street}
-</p>
-
-<p className="text-gray-600">
-  {savedAddress?.city}, {savedAddress?.state} - {savedAddress?.pincode}
-</p>
-
-      </div>
-
-      <button className="text-[#A44A3F] font-semibold">
-        Edit
-      </button>
-
-    </div>
+    <button
+      onClick={() => setAddress({ ...address, type: "Other" })}
+      className={`px-5 py-2 rounded-full ${
+        address.type === "Other"
+          ? "bg-black text-white"
+          : "bg-gray-200 text-black"
+      }`}
+    >
+      📍 Other
+    </button>
 
   </div>
 
+</div>
 </div>
 
 {/* Delivery */}
