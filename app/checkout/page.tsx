@@ -228,7 +228,6 @@ const [savedAddress, setSavedAddress] = useState<any>(null);
   </button>
 
 </div>
-        </div>
 <div className="bg-white rounded-3xl shadow-md p-6">
 
   <div className="grid grid-cols-2 gap-4">
@@ -264,6 +263,8 @@ const [savedAddress, setSavedAddress] = useState<any>(null);
   </div>
 
 </div>
+        </div>
+
         {/* RIGHT */}
 
         <div>
@@ -419,7 +420,7 @@ const [savedAddress, setSavedAddress] = useState<any>(null);
 
 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
 
-  <div className="bg-white rounded-3xl p-8 w-[90%] max-w-xl">
+  <div className="bg-white rounded-3xl p-8 w-[90%] max-w-xl max-h-[90vh] overflow-y-auto">
 
     <h2 className="text-3xl font-serif text-black mb-6">
       Add New Address
