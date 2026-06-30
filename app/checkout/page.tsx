@@ -418,9 +418,9 @@ const [savedAddress, setSavedAddress] = useState<any>(null);
       </div>
 {showAddressForm && (
 
-<div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+<div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 overflow-y-auto">
 
-  <div className="bg-white rounded-3xl p-8 w-[90%] max-w-xl max-h-[90vh] overflow-y-auto">
+  <div className="bg-white rounded-3xl p-8 w-full max-w-xl max-h-[90vh] overflow-y-auto">
 
     <h2 className="text-3xl font-serif text-black mb-6">
       Add New Address
