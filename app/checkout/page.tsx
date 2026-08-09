@@ -185,6 +185,28 @@ export default function CheckoutPage() {
 
     setShowAddressForm(false);
   };
+  const deleteAddress = (index: number) => {
+  const updatedAddresses = addresses.filter(
+    (_, i) => i !== index
+  );
+
+  setAddresses(updatedAddresses);
+
+  if (updatedAddresses.length === 0) {
+    setSelectedAddress(0);
+  } else if (selectedAddress >= updatedAddresses.length) {
+    setSelectedAddress(updatedAddresses.length - 1);
+  } else if (index < selectedAddress) {
+    setSelectedAddress(selectedAddress - 1);
+  }
+
+  localStorage.setItem(
+    "elane_addresses",
+    JSON.stringify(updatedAddresses)
+  );
+};
+
+
 
   /* =========================
      APPLY COUPON
@@ -318,9 +340,7 @@ export default function CheckoutPage() {
 
                 <div>
 
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#A44A3F]">
-                    Step 1
-                  </p>
+                  
 
                   <h2 className="mt-1 font-serif text-2xl sm:text-3xl">
                     Delivery Address
@@ -442,9 +462,7 @@ export default function CheckoutPage() {
 
                 <div>
 
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#A44A3F]">
-                    Step 2
-                  </p>
+                 
 
                   <h2 className="mt-1 font-serif text-2xl sm:text-3xl">
                     Offers & Coupons
@@ -511,7 +529,7 @@ export default function CheckoutPage() {
                     }
                     className={`shrink-0 rounded-full px-5 py-2.5 text-xs font-semibold transition ${
                       selectedCoupon === "ELANE10"
-                        ? "bg-green-600 text-white"
+                        ? "bg-[#A44A3F] text-white"
                         : "bg-black text-white hover:bg-[#A44A3F]"
                     }`}
                   >
@@ -560,7 +578,7 @@ export default function CheckoutPage() {
                     }
                     className={`shrink-0 rounded-full px-5 py-2.5 text-xs font-semibold transition ${
                       selectedCoupon === "NEWUSER"
-                        ? "bg-green-600 text-white"
+                        ? "bg-[#A44A3F] text-white"
                         : "bg-black text-white hover:bg-[#A44A3F]"
                     }`}
                   >
@@ -610,7 +628,7 @@ export default function CheckoutPage() {
 
               {/* PRODUCTS */}
 
-              <div className="mt-5 max-h-56 space-y-3 overflow-y-auto pr-1">
+              <div className="mt-5 space-y-3 pr-1">
 
                 {cartItems.map(
                   (item: any, index: number) => (
@@ -711,7 +729,7 @@ export default function CheckoutPage() {
                     Delivery
                   </span>
 
-                  <span className="font-semibold text-green-600">
+                  <span className="font-semibold text-[#A44A3F]">
                     FREE
                   </span>
 
@@ -925,30 +943,43 @@ export default function CheckoutPage() {
 
                             <div className="mt-3 flex items-center gap-4">
 
-                              <button
-                                onClick={() =>
-                                  openEditAddress(index)
-                                }
-                                className="text-xs font-semibold text-[#A44A3F]"
-                              >
-                                EDIT
-                              </button>
+                             <div className="mt-3 flex flex-wrap items-center gap-4">
 
-                              {selectedAddress ===
-                                index && (
+  <button
+    onClick={() => openEditAddress(index)}
+    className="text-xs font-semibold text-[#A44A3F] hover:text-black"
+  >
+    EDIT
+  </button>
 
-                                <button
-                                  onClick={() =>
-                                    selectAddress(index)
-                                  }
-                                  className="rounded-full bg-[#A44A3F] px-5 py-2 text-xs font-semibold text-white"
-                                >
-                                  Deliver to this Address
-                                </button>
+  <button
+    onClick={() => {
+      const confirmDelete = window.confirm(
+        "Are you sure you want to remove this address?"
+      );
 
-                              )}
+      if (confirmDelete) {
+        deleteAddress(index);
+      }
+    }}
+    className="text-xs font-semibold text-gray-500 hover:text-[#A44A3F]"
+  >
+    REMOVE
+  </button>
 
-                            </div>
+  {selectedAddress === index && (
+    <button
+      onClick={() => selectAddress(index)}
+      className="rounded-full bg-[#A44A3F] px-5 py-2 text-xs font-semibold text-white"
+    >
+      Deliver to this Address
+    </button>
+  )}
+
+</div>
+
+  
+    </div>
 
                           </div>
 
