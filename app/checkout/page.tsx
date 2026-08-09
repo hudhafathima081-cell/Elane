@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
 
 type Address = {
@@ -15,47 +15,104 @@ type Address = {
   type: string;
 };
 
+const emptyAddress: Address = {
+  name: "",
+  phone: "",
+  house: "",
+  street: "",
+  city: "",
+  state: "",
+  pincode: "",
+  type: "Home",
+};
+
 export default function CheckoutPage() {
   const { cartItems } = useCart();
 
-  // ADDRESS
+  /* ================= ADDRESS ================= */
+
   const [showAddressForm, setShowAddressForm] = useState(false);
 
-  const emptyAddress: Address = {
-    name: "",
-    phone: "",
-    house: "",
-    street: "",
-    city: "",
-    state: "",
-    pincode: "",
-    type: "Home",
-  };
+  const [address, setAddress] =
+    useState<Address>(emptyAddress);
 
-  const [address, setAddress] = useState<Address>(emptyAddress);
+  const [addresses, setAddresses] =
+    useState<Address[]>([]);
 
-  const [addresses, setAddresses] = useState<Address[]>([]);
+  const [selectedAddress, setSelectedAddress] =
+    useState<number | null>(null);
 
-  const [selectedAddress, setSelectedAddress] = useState<number | null>(
-    null
-  );
+  const [editingIndex, setEditingIndex] =
+    useState<number | null>(null);
 
-  const [editingIndex, setEditingIndex] = useState<number | null>(null);
+  /* ================= DELIVERY ================= */
 
-  // DELIVERY
   const [deliveryMethod, setDeliveryMethod] =
     useState<"standard" | "express">("standard");
 
-  // COUPON
-  const [selectedCoupon, setSelectedCoupon] = useState("");
+  /* ================= COUPON ================= */
 
-  // TOTAL
+  const [selectedCoupon, setSelectedCoupon] =
+    useState("");
+
+  /* ================= LOAD SAVED ADDRESS ================= */
+
+  useEffect(() => {
+    const savedAddresses =
+      localStorage.getItem("elane_addresses");
+
+    const savedSelected =
+      localStorage.getItem("elane_selected_address");
+
+    if (savedAddresses) {
+      try {
+        const parsed = JSON.parse(savedAddresses);
+
+        if (Array.isArray(parsed)) {
+          setAddresses(parsed);
+        }
+      } catch {
+        console.log("Could not load saved addresses.");
+      }
+    }
+
+    if (savedSelected !== null) {
+      const index = Number(savedSelected);
+
+      if (!Number.isNaN(index)) {
+        setSelectedAddress(index);
+      }
+    }
+  }, []);
+
+  /* ================= SAVE ADDRESS DATA ================= */
+
+  useEffect(() => {
+    localStorage.setItem(
+      "elane_addresses",
+      JSON.stringify(addresses)
+    );
+  }, [addresses]);
+
+  useEffect(() => {
+    if (selectedAddress !== null) {
+      localStorage.setItem(
+        "elane_selected_address",
+        String(selectedAddress)
+      );
+    }
+  }, [selectedAddress]);
+
+  /* ================= PRICE ================= */
+
   const subtotal = cartItems.reduce(
-    (sum: number, item: any) => sum + Number(item.price || 0),
+    (sum: number, item: any) =>
+      sum + Number(item.price || 0),
     0
   );
 
-  const shipping = deliveryMethod === "express" ? 99 : 0;
+  const shipping =
+    deliveryMethod === "express" ? 99 : 0;
 
   const discount =
     selectedCoupon === "ELANE10"
@@ -66,9 +123,13 @@ export default function CheckoutPage() {
       ? 700
       : 0;
 
-  const total = Math.max(0, subtotal + shipping - discount);
+  const total = Math.max(
+    0,
+    subtotal + shipping - discount
+  );
 
-  // OPEN NEW ADDRESS
+  /* ================= OPEN NEW ADDRESS ================= */
+
   const openNewAddress = () => {
     setEditingIndex(null);
     setAddress({
@@ -78,14 +139,18 @@ export default function CheckoutPage() {
     setShowAddressForm(true);
   };
 
-  // OPEN EDIT ADDRESS
+  /* ================= EDIT ADDRESS ================= */
+
   const editAddress = (index: number) => {
     setEditingIndex(index);
-    setAddress({ ...addresses[index] });
+    setAddress({
+      ...addresses[index],
+    });
     setShowAddressForm(true);
   };
 
-  // SAVE ADDRESS
+  /* ================= SAVE ADDRESS ================= */
+
   const saveAddress = () => {
     if (
       !address.name.trim() ||
@@ -101,99 +166,113 @@ export default function CheckoutPage() {
     }
 
     if (editingIndex !== null) {
-      const updatedAddresses = [...addresses];
-      updatedAddresses[editingIndex] = { ...address };
+      const updated = [...addresses];
 
-      setAddresses(updatedAddresses);
+      updated[editingIndex] = {
+        ...address,
+      };
+
+      setAddresses(updated);
       setSelectedAddress(editingIndex);
     } else {
-      const newAddresses = [...addresses, { ...address }];
+      const updated = [
+        ...addresses,
+        {
+          ...address,
+        },
+      ];
 
-      setAddresses(newAddresses);
-      setSelectedAddress(newAddresses.length - 1);
+      setAddresses(updated);
+
+      setSelectedAddress(
+        updated.length - 1
+      );
     }
 
-    setShowAddressForm(false);
+    setAddress({
+      ...emptyAddress,
+    });
+
     setEditingIndex(null);
-    setAddress({ ...emptyAddress });
+    setShowAddressForm(false);
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F4EE] text-[#1C1C1C]">
+    <div className="min-h-screen bg-[#F8F4EE] text-[#171717]">
 
-      {/* ================= HEADER ================= */}
+      {/* ================================================= */}
+      {/* HEADER */}
+      {/* ================================================= */}
 
-      <header className="bg-white border-b border-[#E8DED2] sticky top-0 z-40">
+      <header className="bg-white/80 backdrop-blur-xl border-b border-[#E8DED2]">
 
-        <div className="max-w-7xl mx-auto px-6 py-7">
+        <div className="max-w-7xl mx-auto px-5 md:px-6 py-5">
 
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
+          <div className="flex items-center justify-between">
 
             <div>
-              <p className="text-xs tracking-[0.25em] uppercase text-[#A44A3F] font-semibold">
+
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#A44A3F] font-bold">
                 ÉLANE
               </p>
 
-              <h1 className="text-4xl md:text-5xl font-serif text-[#171717] mt-1">
+              <h1 className="text-3xl md:text-4xl font-serif text-[#171717]">
                 Checkout
               </h1>
 
-              <p className="text-[#4A4540] mt-2">
-                Complete your order securely.
-              </p>
             </div>
 
-            <div className="text-sm text-[#4A4540]">
+            <p className="hidden sm:block text-sm text-[#4A4540]">
               🔒 Secure checkout
-            </div>
+            </p>
 
           </div>
 
           {/* PROGRESS */}
 
-          <div className="flex items-center gap-3 md:gap-5 mt-8">
+          <div className="flex items-center gap-3 md:gap-5 mt-5">
 
             {/* CART */}
 
             <div className="flex items-center gap-2">
 
-              <div className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-black text-white flex items-center justify-center font-semibold">
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-black text-white flex items-center justify-center text-sm font-bold">
                 ✓
               </div>
 
-              <span className="font-semibold text-[#1C1C1C] hidden sm:block">
+              <span className="text-sm font-semibold text-[#171717]">
                 Cart
               </span>
 
             </div>
 
-            <div className="flex-1 h-[2px] bg-black rounded-full" />
+            <div className="flex-1 h-[2px] bg-black" />
 
             {/* CHECKOUT */}
 
             <div className="flex items-center gap-2">
 
-              <div className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-[#A44A3F] text-white flex items-center justify-center font-semibold">
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#A44A3F] text-white flex items-center justify-center text-sm font-bold">
                 2
               </div>
 
-              <span className="font-semibold text-[#1C1C1C] hidden sm:block">
+              <span className="text-sm font-semibold text-[#171717]">
                 Checkout
               </span>
 
             </div>
 
-            <div className="flex-1 h-[2px] bg-[#D7D0C8] rounded-full" />
+            <div className="flex-1 h-[2px] bg-[#D6CEC5]" />
 
             {/* PAYMENT */}
 
             <div className="flex items-center gap-2">
 
-              <div className="w-9 h-9 md:w-11 md:h-11 rounded-full border-2 border-[#CFC7BE] bg-white text-[#4A4540] flex items-center justify-center">
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-[#C8BFB6] bg-white text-[#4A4540] flex items-center justify-center text-sm">
                 3
               </div>
 
-              <span className="text-[#4A4540] hidden sm:block">
+              <span className="text-sm text-[#4A4540]">
                 Payment
               </span>
 
@@ -205,23 +284,27 @@ export default function CheckoutPage() {
 
       </header>
 
-      {/* ================= MAIN ================= */}
+      {/* ================================================= */}
+      {/* MAIN */}
+      {/* ================================================= */}
 
-      <main className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-8 px-6 py-10">
+      <main className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-8 px-5 md:px-6 py-8">
 
-        {/* ================= LEFT SIDE ================= */}
+        {/* ================================================= */}
+        {/* LEFT */}
+        {/* ================================================= */}
 
         <div className="lg:col-span-2 space-y-7">
 
-          {/* DELIVERY ADDRESS */}
+          {/* ================= DELIVERY ADDRESS ================= */}
 
-          <section className="bg-white rounded-[28px] border border-[#E8DED2] shadow-sm p-7 md:p-8">
+          <section className="bg-white rounded-[28px] border border-[#E8DED2] shadow-sm p-7">
 
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
 
               <div>
 
-                <p className="text-xs tracking-[0.2em] uppercase text-[#A44A3F] font-semibold">
+                <p className="text-[10px] tracking-[0.25em] uppercase text-[#A44A3F] font-bold">
                   Step 1
                 </p>
 
@@ -229,8 +312,8 @@ export default function CheckoutPage() {
                   Delivery Address
                 </h2>
 
-                <p className="text-[#4A4540] mt-2">
-                  Where should we deliver your ÉLANE order?
+                <p className="text-[#4A4540] mt-1">
+                  Choose where your order should be delivered.
                 </p>
 
               </div>
@@ -249,9 +332,9 @@ export default function CheckoutPage() {
 
             {addresses.length === 0 && (
 
-              <div className="mt-7 border-2 border-dashed border-[#D8CFC5] rounded-3xl p-8 md:p-10 text-center">
+              <div className="mt-7 border border-dashed border-[#CEC4B9] rounded-3xl p-9 text-center">
 
-                <div className="w-14 h-14 mx-auto rounded-full bg-[#F8F4EE] flex items-center justify-center text-2xl">
+                <div className="text-4xl">
                   📍
                 </div>
 
@@ -285,15 +368,17 @@ export default function CheckoutPage() {
 
                   <div
                     key={index}
-                    onClick={() => setSelectedAddress(index)}
+                    onClick={() =>
+                      setSelectedAddress(index)
+                    }
                     className={`cursor-pointer rounded-2xl border-2 p-5 transition ${
                       selectedAddress === index
                         ? "border-[#A44A3F] bg-[#FDF8F5]"
-                        : "border-[#E8DED2] bg-white hover:border-[#A44A3F]"
+                        : "border-[#E8DED2] hover:border-[#A44A3F]"
                     }`}
                   >
 
-                    <div className="flex justify-between items-start gap-4">
+                    <div className="flex justify-between gap-4">
 
                       <div className="flex gap-4">
 
@@ -301,7 +386,7 @@ export default function CheckoutPage() {
                           className={`w-6 h-6 rounded-full border-2 flex items-center justify-center mt-1 ${
                             selectedAddress === index
                               ? "border-[#A44A3F]"
-                              : "border-[#BDB5AC]"
+                              : "border-[#BEB5AB]"
                           }`}
                         >
 
@@ -313,13 +398,13 @@ export default function CheckoutPage() {
 
                         <div>
 
-                          <div className="flex flex-wrap items-center gap-2">
+                          <div className="flex flex-wrap gap-2 items-center">
 
                             <h3 className="font-semibold text-lg text-[#171717]">
                               {item.name}
                             </h3>
 
-                            <span className="bg-[#F0E6DF] text-[#7F372F] px-3 py-1 rounded-full text-xs font-semibold">
+                            <span className="text-xs bg-[#F0E5DE] text-[#7D372F] px-3 py-1 rounded-full font-semibold">
                               {item.type}
                             </span>
 
@@ -334,7 +419,8 @@ export default function CheckoutPage() {
                           </p>
 
                           <p className="text-[#3F3A35]">
-                            {item.city}, {item.state} - {item.pincode}
+                            {item.city}, {item.state} -{" "}
+                            {item.pincode}
                           </p>
 
                         </div>
@@ -347,7 +433,7 @@ export default function CheckoutPage() {
                           e.stopPropagation();
                           editAddress(index);
                         }}
-                        className="text-[#A44A3F] font-semibold hover:text-black transition"
+                        className="text-[#A44A3F] font-semibold"
                       >
                         Edit
                       </button>
@@ -364,11 +450,11 @@ export default function CheckoutPage() {
 
           </section>
 
-          {/* DELIVERY METHOD */}
+          {/* ================= DELIVERY METHOD ================= */}
 
-          <section className="bg-white rounded-[28px] border border-[#E8DED2] shadow-sm p-7 md:p-8">
+          <section className="bg-white rounded-[28px] border border-[#E8DED2] shadow-sm p-7">
 
-            <p className="text-xs tracking-[0.2em] uppercase text-[#A44A3F] font-semibold">
+            <p className="text-[10px] tracking-[0.25em] uppercase text-[#A44A3F] font-bold">
               Step 2
             </p>
 
@@ -376,8 +462,8 @@ export default function CheckoutPage() {
               Delivery Method
             </h2>
 
-            <p className="text-[#4A4540] mt-2">
-              Choose the delivery speed that works for you.
+            <p className="text-[#4A4540] mt-1">
+              Select your preferred delivery option.
             </p>
 
             <div className="space-y-4 mt-7">
@@ -386,25 +472,21 @@ export default function CheckoutPage() {
 
               <button
                 type="button"
-                onClick={() => setDeliveryMethod("standard")}
+                onClick={() =>
+                  setDeliveryMethod("standard")
+                }
                 className={`w-full text-left rounded-2xl border-2 p-5 transition ${
                   deliveryMethod === "standard"
                     ? "border-[#A44A3F] bg-[#FDF8F5]"
-                    : "border-[#E8DED2] hover:border-[#A44A3F]"
+                    : "border-[#E8DED2]"
                 }`}
               >
 
-                <div className="flex justify-between items-center gap-4">
+                <div className="flex justify-between items-center">
 
                   <div className="flex gap-4">
 
-                    <div
-                      className={`w-6 h-6 rounded-full border-2 flex items-center justify-center mt-1 ${
-                        deliveryMethod === "standard"
-                          ? "border-[#A44A3F]"
-                          : "border-[#BDB5AC]"
-                      }`}
-                    >
+                    <div className="w-6 h-6 rounded-full border-2 border-[#A44A3F] flex items-center justify-center">
 
                       {deliveryMethod === "standard" && (
                         <div className="w-3 h-3 rounded-full bg-[#A44A3F]" />
@@ -414,12 +496,12 @@ export default function CheckoutPage() {
 
                     <div>
 
-                      <h3 className="font-semibold text-lg text-[#171717]">
+                      <h3 className="font-semibold text-[#171717]">
                         Standard Delivery
                       </h3>
 
                       <p className="text-[#4A4540] text-sm mt-1">
-                        Delivered within 3–5 business days
+                        Delivered within 3–5 business days.
                       </p>
 
                     </div>
@@ -438,25 +520,21 @@ export default function CheckoutPage() {
 
               <button
                 type="button"
-                onClick={() => setDeliveryMethod("express")}
+                onClick={() =>
+                  setDeliveryMethod("express")
+                }
                 className={`w-full text-left rounded-2xl border-2 p-5 transition ${
                   deliveryMethod === "express"
                     ? "border-[#A44A3F] bg-[#FDF8F5]"
-                    : "border-[#E8DED2] hover:border-[#A44A3F]"
+                    : "border-[#E8DED2]"
                 }`}
               >
 
-                <div className="flex justify-between items-center gap-4">
+                <div className="flex justify-between items-center">
 
                   <div className="flex gap-4">
 
-                    <div
-                      className={`w-6 h-6 rounded-full border-2 flex items-center justify-center mt-1 ${
-                        deliveryMethod === "express"
-                          ? "border-[#A44A3F]"
-                          : "border-[#BDB5AC]"
-                      }`}
-                    >
+                    <div className="w-6 h-6 rounded-full border-2 border-[#A44A3F] flex items-center justify-center">
 
                       {deliveryMethod === "express" && (
                         <div className="w-3 h-3 rounded-full bg-[#A44A3F]" />
@@ -466,12 +544,12 @@ export default function CheckoutPage() {
 
                     <div>
 
-                      <h3 className="font-semibold text-lg text-[#171717]">
+                      <h3 className="font-semibold text-[#171717]">
                         Express Delivery
                       </h3>
 
                       <p className="text-[#4A4540] text-sm mt-1">
-                        Delivered tomorrow before 8 PM
+                        Delivered tomorrow before 8 PM.
                       </p>
 
                     </div>
@@ -488,25 +566,13 @@ export default function CheckoutPage() {
 
             </div>
 
-            <div className="mt-5 bg-[#F8F4EE] border border-[#E8DED2] rounded-2xl p-4">
-
-              <p className="text-[#292521] font-medium">
-                🚚 Premium ÉLANE packaging included
-              </p>
-
-              <p className="text-[#5A544E] text-sm mt-1">
-                Delivery time may vary slightly depending on your location.
-              </p>
-
-            </div>
-
           </section>
 
-          {/* COUPONS */}
+          {/* ================= COUPONS ================= */}
 
-          <section className="bg-white rounded-[28px] border border-[#E8DED2] shadow-sm p-7 md:p-8">
+          <section className="bg-white rounded-[28px] border border-[#E8DED2] shadow-sm p-7">
 
-            <p className="text-xs tracking-[0.2em] uppercase text-[#A44A3F] font-semibold">
+            <p className="text-[10px] tracking-[0.25em] uppercase text-[#A44A3F] font-bold">
               Step 3
             </p>
 
@@ -514,8 +580,8 @@ export default function CheckoutPage() {
               Offers & Coupons
             </h2>
 
-            <p className="text-[#4A4540] mt-2">
-              Choose one offer and save on your order.
+            <p className="text-[#4A4540] mt-1">
+              Choose one offer to save on your order.
             </p>
 
             <div className="space-y-4 mt-7">
@@ -529,7 +595,7 @@ export default function CheckoutPage() {
                 {
                   code: "NEWUSER",
                   title: "₹300 OFF",
-                  desc: "Special offer for your first purchase",
+                  desc: "Special offer for first purchase",
                 },
                 {
                   code: "LUXURY15",
@@ -540,7 +606,7 @@ export default function CheckoutPage() {
 
                 <div
                   key={coupon.code}
-                  className={`rounded-2xl border-2 p-5 flex items-center justify-between gap-5 transition ${
+                  className={`rounded-2xl border-2 p-5 flex items-center justify-between gap-5 ${
                     selectedCoupon === coupon.code
                       ? "border-[#A44A3F] bg-[#FDF8F5]"
                       : "border-[#E8DED2]"
@@ -549,19 +615,9 @@ export default function CheckoutPage() {
 
                   <div>
 
-                    <div className="flex items-center gap-3">
-
-                      <span className="bg-[#F0E6DF] text-[#7F372F] px-3 py-1 rounded-lg text-sm font-bold">
-                        {coupon.code}
-                      </span>
-
-                      {selectedCoupon === coupon.code && (
-                        <span className="text-green-700 text-sm font-semibold">
-                          Applied
-                        </span>
-                      )}
-
-                    </div>
+                    <span className="bg-[#F0E5DE] text-[#7D372F] px-3 py-1 rounded-lg text-sm font-bold">
+                      {coupon.code}
+                    </span>
 
                     <p className="text-[#A44A3F] font-bold mt-2">
                       {coupon.title}
@@ -582,7 +638,7 @@ export default function CheckoutPage() {
                           : coupon.code
                       )
                     }
-                    className={`shrink-0 px-5 py-2.5 rounded-full font-semibold transition ${
+                    className={`px-5 py-2.5 rounded-full font-semibold ${
                       selectedCoupon === coupon.code
                         ? "bg-green-700 text-white"
                         : "bg-black text-white hover:bg-[#A44A3F]"
@@ -603,28 +659,27 @@ export default function CheckoutPage() {
 
         </div>
 
-        {/* ================= RIGHT SIDE ================= */}
+        {/* ================================================= */}
+        {/* RIGHT SIDE */}
+        {/* IMPORTANT: NO STICKY HERE */}
+        {/* ================================================= */}
 
-        <aside className="space-y-6 lg:sticky lg:top-32 h-fit">
+        <aside className="h-fit">
 
           <div className="bg-white rounded-[28px] border border-[#E8DED2] shadow-sm p-7">
 
-            <div className="flex items-center justify-between">
+            <p className="text-[10px] tracking-[0.25em] uppercase text-[#A44A3F] font-bold">
+              Your Order
+            </p>
 
-              <div>
+            <div className="flex justify-between items-center">
 
-                <p className="text-xs tracking-[0.2em] uppercase text-[#A44A3F] font-semibold">
-                  Your Order
-                </p>
+              <h2 className="text-3xl font-serif text-[#171717]">
+                Order Summary
+              </h2>
 
-                <h2 className="text-3xl font-serif text-[#171717] mt-1">
-                  Order Summary
-                </h2>
-
-              </div>
-
-              <span className="bg-[#F8F4EE] text-[#3D3833] px-3 py-1 rounded-full text-sm">
-                {cartItems.length} item{cartItems.length !== 1 ? "s" : ""}
+              <span className="bg-[#F8F4EE] text-[#3D3833] px-3 py-1 rounded-full text-xs">
+                {cartItems.length} items
               </span>
 
             </div>
@@ -633,15 +688,8 @@ export default function CheckoutPage() {
 
             <div className="space-y-4 mt-7">
 
-              {cartItems.length === 0 ? (
-
-                <p className="text-[#4A4540]">
-                  Your cart is empty.
-                </p>
-
-              ) : (
-
-                cartItems.map((item: any, index: number) => (
+              {cartItems.map(
+                (item: any, index: number) => (
 
                   <div
                     key={index}
@@ -651,10 +699,10 @@ export default function CheckoutPage() {
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-20 h-20 rounded-2xl object-cover border border-[#E8DED2]"
+                      className="w-20 h-20 rounded-2xl object-cover"
                     />
 
-                    <div className="flex-1">
+                    <div>
 
                       <h3 className="font-semibold text-[#171717]">
                         {item.name}
@@ -665,15 +713,17 @@ export default function CheckoutPage() {
                       </p>
 
                       <p className="text-[#A44A3F] font-bold mt-2">
-                        ₹{Number(item.price || 0).toLocaleString()}
+                        ₹
+                        {Number(
+                          item.price || 0
+                        ).toLocaleString()}
                       </p>
 
                     </div>
 
                   </div>
 
-                ))
-
+                )
               )}
 
             </div>
@@ -686,7 +736,7 @@ export default function CheckoutPage() {
 
                 <span>Subtotal</span>
 
-                <span className="font-medium">
+                <span>
                   ₹{subtotal.toLocaleString()}
                 </span>
 
@@ -696,7 +746,7 @@ export default function CheckoutPage() {
 
                 <span>Shipping</span>
 
-                <span className="font-semibold text-green-700">
+                <span className="text-green-700 font-semibold">
                   {shipping === 0
                     ? "FREE"
                     : `₹${shipping}`}
@@ -706,16 +756,9 @@ export default function CheckoutPage() {
 
               <div className="flex justify-between">
 
-                <span>
-                  Discount
-                  {selectedCoupon && (
-                    <span className="text-xs text-[#A44A3F] ml-2">
-                      {selectedCoupon}
-                    </span>
-                  )}
-                </span>
+                <span>Discount</span>
 
-                <span className="font-semibold text-[#A44A3F]">
+                <span className="text-[#A44A3F] font-semibold">
                   -₹{discount.toLocaleString()}
                 </span>
 
@@ -723,13 +766,13 @@ export default function CheckoutPage() {
 
               <hr className="border-[#E8DED2]" />
 
-              <div className="flex justify-between items-end">
+              <div className="flex justify-between items-center">
 
-                <span className="text-xl font-semibold text-[#171717]">
+                <span className="text-xl font-semibold">
                   Total
                 </span>
 
-                <span className="text-3xl font-bold text-[#171717]">
+                <span className="text-3xl font-bold">
                   ₹{total.toLocaleString()}
                 </span>
 
@@ -737,24 +780,24 @@ export default function CheckoutPage() {
 
             </div>
 
-            {/* ADDRESS STATUS */}
+            {/* SAVED ADDRESS */}
 
-            <div className="mt-6 rounded-2xl bg-[#F8F4EE] border border-[#E8DED2] p-4">
+            <div className="mt-6 bg-[#F8F4EE] rounded-2xl p-4">
 
               {selectedAddress !== null &&
               addresses[selectedAddress] ? (
 
                 <>
 
-                  <p className="text-xs uppercase tracking-wider text-[#7F372F] font-bold">
+                  <p className="text-xs uppercase tracking-wider text-[#7D372F] font-bold">
                     Delivering to
                   </p>
 
-                  <p className="text-[#171717] font-semibold mt-1">
+                  <p className="font-semibold text-[#171717] mt-1">
                     {addresses[selectedAddress].name}
                   </p>
 
-                  <p className="text-[#4A4540] text-sm mt-1">
+                  <p className="text-sm text-[#4A4540] mt-1">
                     {addresses[selectedAddress].city},{" "}
                     {addresses[selectedAddress].state}
                   </p>
@@ -763,7 +806,7 @@ export default function CheckoutPage() {
 
               ) : (
 
-                <p className="text-[#3F3A35] text-sm">
+                <p className="text-sm text-[#3F3A35]">
                   Please add a delivery address before payment.
                 </p>
 
@@ -771,23 +814,26 @@ export default function CheckoutPage() {
 
             </div>
 
-            {/* PAYMENT BUTTON */}
+            {/* CONTINUE */}
 
             <Link
               href={
-                addresses.length > 0 &&
                 selectedAddress !== null
                   ? "/payment"
                   : "#"
               }
               onClick={(e) => {
-                if (
-                  addresses.length === 0 ||
-                  selectedAddress === null
-                ) {
+
+                if (selectedAddress === null) {
+
                   e.preventDefault();
-                  alert("Please add and select a delivery address first.");
+
+                  alert(
+                    "Please add and select a delivery address first."
+                  );
+
                 }
+
               }}
             >
 
@@ -806,61 +852,13 @@ export default function CheckoutPage() {
 
           </div>
 
-          {/* TRUST BOX */}
-
-          <div className="bg-[#171717] rounded-[28px] p-6 text-white">
-
-            <div className="grid grid-cols-2 gap-5">
-
-              <div>
-                <p className="text-xl">🔒</p>
-                <p className="font-semibold mt-2">
-                  Secure Payment
-                </p>
-                <p className="text-white/70 text-xs mt-1">
-                  Protected checkout
-                </p>
-              </div>
-
-              <div>
-                <p className="text-xl">🚚</p>
-                <p className="font-semibold mt-2">
-                  Fast Delivery
-                </p>
-                <p className="text-white/70 text-xs mt-1">
-                  Carefully packed
-                </p>
-              </div>
-
-              <div>
-                <p className="text-xl">↩</p>
-                <p className="font-semibold mt-2">
-                  Easy Returns
-                </p>
-                <p className="text-white/70 text-xs mt-1">
-                  Simple return process
-                </p>
-              </div>
-
-              <div>
-                <p className="text-xl">✦</p>
-                <p className="font-semibold mt-2">
-                  ÉLANE Quality
-                </p>
-                <p className="text-white/70 text-xs mt-1">
-                  Premium accessories
-                </p>
-              </div>
-
-            </div>
-
-          </div>
-
         </aside>
 
       </main>
 
-      {/* ================= ADDRESS MODAL ================= */}
+      {/* ================================================= */}
+      {/* ADDRESS MODAL */}
+      {/* ================================================= */}
 
       {showAddressForm && (
 
@@ -870,11 +868,11 @@ export default function CheckoutPage() {
 
             {/* MODAL HEADER */}
 
-            <div className="sticky top-0 bg-white border-b border-[#E8DED2] px-7 py-5 flex items-center justify-between z-10">
+            <div className="sticky top-0 bg-white border-b border-[#E8DED2] px-7 py-5 flex justify-between items-center">
 
               <div>
 
-                <p className="text-xs uppercase tracking-[0.2em] text-[#A44A3F] font-bold">
+                <p className="text-[10px] tracking-[0.25em] uppercase text-[#A44A3F] font-bold">
                   ÉLANE
                 </p>
 
@@ -888,8 +886,10 @@ export default function CheckoutPage() {
 
               <button
                 type="button"
-                onClick={() => setShowAddressForm(false)}
-                className="w-10 h-10 rounded-full bg-[#F8F4EE] text-[#171717] hover:bg-[#EDE4DA] transition"
+                onClick={() =>
+                  setShowAddressForm(false)
+                }
+                className="w-10 h-10 rounded-full bg-[#F8F4EE] text-[#171717]"
               >
                 ✕
               </button>
@@ -903,12 +903,12 @@ export default function CheckoutPage() {
               <div className="grid md:grid-cols-2 gap-4">
 
                 <div>
+
                   <label className="block text-sm font-semibold text-[#27231F] mb-2">
                     Full Name
                   </label>
 
                   <input
-                    type="text"
                     value={address.name}
                     onChange={(e) =>
                       setAddress({
@@ -919,15 +919,16 @@ export default function CheckoutPage() {
                     placeholder="Enter your full name"
                     className="w-full border border-[#D8CFC5] rounded-xl px-4 py-3 text-[#171717] placeholder:text-[#77706A] outline-none focus:border-[#A44A3F]"
                   />
+
                 </div>
 
                 <div>
+
                   <label className="block text-sm font-semibold text-[#27231F] mb-2">
                     Phone Number
                   </label>
 
                   <input
-                    type="tel"
                     value={address.phone}
                     onChange={(e) =>
                       setAddress({
@@ -935,9 +936,10 @@ export default function CheckoutPage() {
                         phone: e.target.value,
                       })
                     }
-                    placeholder="Enter phone number"
+                    placeholder="Phone number"
                     className="w-full border border-[#D8CFC5] rounded-xl px-4 py-3 text-[#171717] placeholder:text-[#77706A] outline-none focus:border-[#A44A3F]"
                   />
+
                 </div>
 
               </div>
@@ -949,7 +951,6 @@ export default function CheckoutPage() {
                 </label>
 
                 <input
-                  type="text"
                   value={address.house}
                   onChange={(e) =>
                     setAddress({
@@ -957,7 +958,7 @@ export default function CheckoutPage() {
                       house: e.target.value,
                     })
                   }
-                  placeholder="House number, flat number, building"
+                  placeholder="House / Flat / Building"
                   className="w-full border border-[#D8CFC5] rounded-xl px-4 py-3 text-[#171717] placeholder:text-[#77706A] outline-none focus:border-[#A44A3F]"
                 />
 
@@ -993,7 +994,6 @@ export default function CheckoutPage() {
                   </label>
 
                   <input
-                    type="text"
                     value={address.city}
                     onChange={(e) =>
                       setAddress({
@@ -1014,7 +1014,6 @@ export default function CheckoutPage() {
                   </label>
 
                   <input
-                    type="text"
                     value={address.state}
                     onChange={(e) =>
                       setAddress({
@@ -1037,7 +1036,6 @@ export default function CheckoutPage() {
                 </label>
 
                 <input
-                  type="text"
                   value={address.pincode}
                   onChange={(e) =>
                     setAddress({
@@ -1045,13 +1043,13 @@ export default function CheckoutPage() {
                       pincode: e.target.value,
                     })
                   }
-                  placeholder="6-digit PIN code"
+                  placeholder="PIN Code"
                   className="w-full border border-[#D8CFC5] rounded-xl px-4 py-3 text-[#171717] placeholder:text-[#77706A] outline-none focus:border-[#A44A3F]"
                 />
 
               </div>
 
-              {/* ADDRESS TYPE */}
+              {/* TYPE */}
 
               <div>
 
@@ -1059,42 +1057,46 @@ export default function CheckoutPage() {
                   Address Type
                 </label>
 
-                <div className="flex flex-wrap gap-3">
+                <div className="flex gap-3 flex-wrap">
 
-                  {["Home", "Work", "Other"].map((type) => (
+                  {["Home", "Work", "Other"].map(
+                    (type) => (
 
-                    <button
-                      key={type}
-                      type="button"
-                      onClick={() =>
-                        setAddress({
-                          ...address,
-                          type,
-                        })
-                      }
-                      className={`px-5 py-2.5 rounded-full border-2 font-semibold transition ${
-                        address.type === type
-                          ? "bg-black text-white border-black"
-                          : "bg-white text-[#27231F] border-[#D8CFC5] hover:border-[#A44A3F]"
-                      }`}
-                    >
-                      {type}
-                    </button>
+                      <button
+                        key={type}
+                        type="button"
+                        onClick={() =>
+                          setAddress({
+                            ...address,
+                            type,
+                          })
+                        }
+                        className={`px-5 py-2.5 rounded-full border-2 font-semibold ${
+                          address.type === type
+                            ? "bg-black text-white border-black"
+                            : "border-[#D8CFC5] text-[#27231F]"
+                        }`}
+                      >
+                        {type}
+                      </button>
 
-                  ))}
+                    )
+                  )}
 
                 </div>
 
               </div>
 
-              {/* BUTTONS */}
+              {/* ACTIONS */}
 
-              <div className="flex flex-col-reverse sm:flex-row justify-end gap-3 pt-4 border-t border-[#E8DED2]">
+              <div className="flex justify-end gap-3 pt-4 border-t border-[#E8DED2]">
 
                 <button
                   type="button"
-                  onClick={() => setShowAddressForm(false)}
-                  className="px-7 py-3 rounded-full border border-[#D8CFC5] text-[#27231F] font-semibold hover:bg-[#F8F4EE]"
+                  onClick={() =>
+                    setShowAddressForm(false)
+                  }
+                  className="px-7 py-3 rounded-full border border-[#D8CFC5] text-[#27231F] font-semibold"
                 >
                   Cancel
                 </button>
@@ -1102,7 +1104,7 @@ export default function CheckoutPage() {
                 <button
                   type="button"
                   onClick={saveAddress}
-                  className="px-8 py-3 rounded-full bg-[#A44A3F] hover:bg-black text-white font-semibold transition"
+                  className="px-8 py-3 rounded-full bg-[#A44A3F] hover:bg-black text-white font-semibold"
                 >
                   {editingIndex !== null
                     ? "Update Address"
