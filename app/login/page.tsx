@@ -7,20 +7,49 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Temporary login
-    // We will connect real account storage in the next step.
+    setError("");
+    setSuccess("");
+
     if (!email || !password) {
-      alert("Please enter your email and password.");
+      setError("Please enter your email and password.");
       return;
     }
 
-    localStorage.setItem("elane_logged_in", "true");
-    localStorage.setItem("elane_user_email", email);
+    // Get the registered account
+    const savedUser = localStorage.getItem("elane_user");
 
-    window.location.href = "/checkout";
+    // No account exists
+    if (!savedUser) {
+      setError("No account found. Please create an account first.");
+      return;
+    }
+
+    const user = JSON.parse(savedUser);
+
+    // Check email and password
+    if (
+      user.email.toLowerCase() !== email.toLowerCase() ||
+      user.password !== password
+    ) {
+      setError("Incorrect email or password. Please try again.");
+      return;
+    }
+
+    // Login successful
+    localStorage.setItem("elane_logged_in", "true");
+    localStorage.setItem("elane_user_email", user.email);
+
+    setSuccess("Login successful! Redirecting...");
+
+    setTimeout(() => {
+      window.location.href = "/checkout";
+    }, 800);
   };
 
   return (
@@ -28,7 +57,10 @@ export default function LoginPage() {
 
       <div className="w-full max-w-md">
 
+        {/* HEADER */}
+
         <div className="text-center mb-8">
+
           <p className="tracking-[0.35em] text-sm text-[#A44A3F]">
             ÉLANE
           </p>
@@ -40,13 +72,19 @@ export default function LoginPage() {
           <p className="text-gray-600 mt-2">
             Sign in to continue your ÉLANE journey.
           </p>
+
         </div>
+
+        {/* LOGIN CARD */}
 
         <div className="bg-white rounded-[32px] border border-[#ECE5DB] shadow-sm p-8">
 
           <form onSubmit={handleLogin} className="space-y-5">
 
+            {/* EMAIL */}
+
             <div>
+
               <label className="block text-sm font-semibold text-black mb-2">
                 Email Address
               </label>
@@ -56,11 +94,15 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="w-full rounded-2xl border border-[#D8D0C5] px-4 py-3 text-black outline-none focus:border-[#A44A3F]"
+                className="w-full rounded-2xl border border-[#D8D0C5] px-4 py-3 text-black bg-white outline-none focus:border-[#A44A3F]"
               />
+
             </div>
 
+            {/* PASSWORD */}
+
             <div>
+
               <label className="block text-sm font-semibold text-black mb-2">
                 Password
               </label>
@@ -70,9 +112,28 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
-                className="w-full rounded-2xl border border-[#D8D0C5] px-4 py-3 text-black outline-none focus:border-[#A44A3F]"
+                className="w-full rounded-2xl border border-[#D8D0C5] px-4 py-3 text-black bg-white outline-none focus:border-[#A44A3F]"
               />
+
             </div>
+
+            {/* ERROR MESSAGE */}
+
+            {error && (
+              <div className="bg-[#FDF1EF] border border-[#E6B8B0] rounded-2xl px-4 py-3 text-[#9E2F2F] text-sm">
+                {error}
+              </div>
+            )}
+
+            {/* SUCCESS MESSAGE */}
+
+            {success && (
+              <div className="bg-[#F8F4EE] border border-[#D8D0C5] rounded-2xl px-4 py-3 text-black text-sm">
+                {success}
+              </div>
+            )}
+
+            {/* LOGIN BUTTON */}
 
             <button
               type="submit"
@@ -82,6 +143,8 @@ export default function LoginPage() {
             </button>
 
           </form>
+
+          {/* REGISTER */}
 
           <div className="text-center mt-7 pt-6 border-t border-[#ECE5DB]">
 
